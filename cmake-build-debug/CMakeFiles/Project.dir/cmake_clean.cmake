@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Project.dir/src/Graph/load.cpp.obj"
+  "CMakeFiles/Project.dir/src/UI/menu.cpp.obj"
   "CMakeFiles/Project.dir/src/main.cpp.obj"
   "Project.exe"
   "Project.exe.manifest"

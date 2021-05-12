@@ -3,9 +3,10 @@
 cmake_policy(SET CMP0009 NEW)
 
 # SRC_FILES at CMakeLists.txt:15 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/*.cpp")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/*/*.cpp")
 set(OLD_GLOB
-  "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/main.cpp"
+  "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/Graph/load.cpp"
+  "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/UI/menu.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

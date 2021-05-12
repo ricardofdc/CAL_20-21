@@ -1202,6 +1202,18 @@
 		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/lib/GraphViewerCpp/src/node.cpp">
 			<Option target="graphviewer"/>
 		</Unit>
+		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/Graph/load.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/Graph/load.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/UI/menu.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/UI/menu.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/src/main.cpp">
 			<Option target="Project"/>
 		</Unit>

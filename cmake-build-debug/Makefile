@@ -280,6 +280,60 @@ sfml-audio/fast:
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make lib/GraphViewerCpp/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
 .PHONY : sfml-audio/fast
 
+src/Graph/load.obj: src/Graph/load.cpp.obj
+
+.PHONY : src/Graph/load.obj
+
+# target to build an object file
+src/Graph/load.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/Graph/load.cpp.obj
+.PHONY : src/Graph/load.cpp.obj
+
+src/Graph/load.i: src/Graph/load.cpp.i
+
+.PHONY : src/Graph/load.i
+
+# target to preprocess a source file
+src/Graph/load.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/Graph/load.cpp.i
+.PHONY : src/Graph/load.cpp.i
+
+src/Graph/load.s: src/Graph/load.cpp.s
+
+.PHONY : src/Graph/load.s
+
+# target to generate assembly for a file
+src/Graph/load.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/Graph/load.cpp.s
+.PHONY : src/Graph/load.cpp.s
+
+src/UI/menu.obj: src/UI/menu.cpp.obj
+
+.PHONY : src/UI/menu.obj
+
+# target to build an object file
+src/UI/menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/UI/menu.cpp.obj
+.PHONY : src/UI/menu.cpp.obj
+
+src/UI/menu.i: src/UI/menu.cpp.i
+
+.PHONY : src/UI/menu.i
+
+# target to preprocess a source file
+src/UI/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/UI/menu.cpp.i
+.PHONY : src/UI/menu.cpp.i
+
+src/UI/menu.s: src/UI/menu.cpp.s
+
+.PHONY : src/UI/menu.s
+
+# target to generate assembly for a file
+src/UI/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/UI/menu.cpp.s
+.PHONY : src/UI/menu.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -327,6 +381,12 @@ help:
 	@echo ... sfml-network
 	@echo ... sfml-system
 	@echo ... sfml-window
+	@echo ... src/Graph/load.obj
+	@echo ... src/Graph/load.i
+	@echo ... src/Graph/load.s
+	@echo ... src/UI/menu.obj
+	@echo ... src/UI/menu.i
+	@echo ... src/UI/menu.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

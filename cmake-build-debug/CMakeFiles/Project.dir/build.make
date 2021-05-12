@@ -90,14 +90,46 @@ CMakeFiles/Project.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/main.cpp.s"
 	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\main.cpp -o CMakeFiles\Project.dir\src\main.cpp.s
 
+CMakeFiles/Project.dir/src/Graph/load.cpp.obj: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/Graph/load.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
+CMakeFiles/Project.dir/src/Graph/load.cpp.obj: ../src/Graph/load.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/Graph/load.cpp.obj"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\Graph\load.cpp.obj -c C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp
+
+CMakeFiles/Project.dir/src/Graph/load.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/Graph/load.cpp.i"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp > CMakeFiles\Project.dir\src\Graph\load.cpp.i
+
+CMakeFiles/Project.dir/src/Graph/load.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/Graph/load.cpp.s"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp -o CMakeFiles\Project.dir\src\Graph\load.cpp.s
+
+CMakeFiles/Project.dir/src/UI/menu.cpp.obj: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/UI/menu.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
+CMakeFiles/Project.dir/src/UI/menu.cpp.obj: ../src/UI/menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/src/UI/menu.cpp.obj"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\UI\menu.cpp.obj -c C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp
+
+CMakeFiles/Project.dir/src/UI/menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/UI/menu.cpp.i"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp > CMakeFiles\Project.dir\src\UI\menu.cpp.i
+
+CMakeFiles/Project.dir/src/UI/menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/UI/menu.cpp.s"
+	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp -o CMakeFiles\Project.dir\src\UI\menu.cpp.s
+
 # Object files for target Project
 Project_OBJECTS = \
-"CMakeFiles/Project.dir/src/main.cpp.obj"
+"CMakeFiles/Project.dir/src/main.cpp.obj" \
+"CMakeFiles/Project.dir/src/Graph/load.cpp.obj" \
+"CMakeFiles/Project.dir/src/UI/menu.cpp.obj"
 
 # External object files for target Project
 Project_EXTERNAL_OBJECTS =
 
 Project.exe: CMakeFiles/Project.dir/src/main.cpp.obj
+Project.exe: CMakeFiles/Project.dir/src/Graph/load.cpp.obj
+Project.exe: CMakeFiles/Project.dir/src/UI/menu.cpp.obj
 Project.exe: CMakeFiles/Project.dir/build.make
 Project.exe: ../lib/GraphViewerCpp/lib/libgraphviewer.a
 Project.exe: lib/GraphViewerCpp/SFML/lib/libsfml-graphics-d.a
@@ -106,7 +138,7 @@ Project.exe: lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a
 Project.exe: CMakeFiles/Project.dir/linklibs.rsp
 Project.exe: CMakeFiles/Project.dir/objects1.rsp
 Project.exe: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

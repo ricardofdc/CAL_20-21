@@ -13,7 +13,7 @@ include_directories(${GRAPHVIEWERCPP_PATH}/include)
 
 # Add the source files of each TP class
 file(GLOB SRC_FILES CONFIGURE_DEPENDS
-        "src/*.cpp"
+        "src/*/*.cpp"
         )
 
 add_executable(Project
