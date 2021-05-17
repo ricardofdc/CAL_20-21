@@ -65,7 +65,22 @@ void GraphViewer::createWindow(unsigned int width, unsigned int height){
     this->width  = width;
     this->height = height;
 
+    // Create window
+    ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    GraphViewer::createWindowMutex.lock();
+    window = new RenderWindow(VideoMode(this->width, this->height), "GraphViewer", Style::Default, settings);
+    GraphViewer::createWindowMutex.unlock();
+
+    // Create views
+    view = new View(window->getDefaultView());
+    debug_view = new View(window->getDefaultView());
+
+    // Recalculate view
+    recalculateView();
+
     windowOpen = true;
+    window->setActive(false);
     main_thread = new thread(&GraphViewer::run, this);
 }
 
@@ -77,7 +92,10 @@ void GraphViewer::closeWindow(){
 }
 
 void GraphViewer::setCenter(const sf::Vector2f &center){
-    this->center = center;
+    {
+        lock_guard<mutex> lock(graphMutex);
+        this->center = center;
+    }
     if(isWindowOpen()){
         lock_guard<mutex> lock(graphMutex);
         recalculateView();
@@ -89,7 +107,10 @@ const sf::Vector2f &GraphViewer::getCenter() const{
 }
 
 void GraphViewer::setScale(double scale){
-    this->scale = scale;
+    {
+        lock_guard<mutex> lock(graphMutex);
+        this->scale = scale;
+    }
     if(isWindowOpen()){
         lock_guard<mutex> lock(graphMutex);
         recalculateView();
@@ -167,6 +188,15 @@ void GraphViewer::removeEdge_noLock(GraphViewer::id_t id){
     if(zipEdges) updateZip();
 }
 
+void GraphViewer::setBackgroundColor(const sf::Color &color){
+    lock_guard<mutex> lock(graphMutex);
+    background_color = color;
+}
+
+const sf::Color &GraphViewer::getBackgroundColor() const {
+    return background_color;
+}
+
 void GraphViewer::setBackground(const string &path, const sf::Vector2f &position, const sf::Vector2f &scale, double alpha){
     lock_guard<mutex> lock(graphMutex);
     background_texture.loadFromFile(path);
@@ -211,20 +241,11 @@ void GraphViewer::updateZip(){
 }
 
 void GraphViewer::run(){
-    ContextSettings settings;
-    settings.antialiasingLevel = 8;
-    GraphViewer::createWindowMutex.lock();
-    window = new RenderWindow(VideoMode(this->width, this->height), "GraphViewer", Style::Default, settings);
-    GraphViewer::createWindowMutex.unlock();
-
-    view = new View(window->getDefaultView());
-    debug_view = new View(window->getDefaultView());
+    window->setActive(true);
 
     bool isLeftClickPressed = false;
     Vector2f centerInitial;
     Vector2f posMouseInitial;
-
-    recalculateView();
 
     while (window->isOpen()){
         Event event;
@@ -282,7 +303,7 @@ void GraphViewer::run(){
 
 void GraphViewer::draw() {
     lock_guard<mutex> lock(graphMutex);
-    window->clear(Color::White);
+    window->clear(background_color);
 
     window->setView(*view);
     window->draw(background_sprite);

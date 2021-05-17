@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdio.h>
 
-#include "graphviewer.h"
+
 #include "UI/menu.h"
 #include "Graph/Graph.h"
 #include "Graph/load.h"
@@ -13,13 +13,87 @@
 #endif
 
 static Graph<int> graph;
+static GraphViewer gv;
 
-void loadGridGraphsMenu(){
+void load4x4GridGraph(){
 
 }
 
-void loadPortugalMapsMenu(){
+void load8x8GridGraph(){
 
+}
+
+void load16x16GridGraph(){
+
+}
+
+void loadGridGraphsMenu(){
+    drawMenu("Looking for parking spots - Load Map - Grid Graphs", {
+            {"4x4", load4x4GridGraph},
+            {"8x8", load8x8GridGraph},
+            {"16x16", load16x16GridGraph}
+    });
+}
+
+void loadPortugalAveiroGraph(){
+
+}
+
+void loadPortugalBragaGraph(){
+
+}
+
+void loadPortugalCoimbraGraph(){
+
+}
+
+void loadPortugalErmesindeGraph(){
+
+}
+
+void loadPortugalFafeGraph(){
+
+}
+
+void loadPortugalGondomarGraph(){
+
+}
+
+void loadPortugalLisboaGraph(){
+
+}
+
+void loadPortugalMaiaGraph(){
+
+}
+
+void loadPortugalPortoGraph(){
+
+}
+
+void loadPortugalPortugalGraph(){
+
+}
+
+void loadPortugalViseuGraph(){
+
+}
+
+
+void loadPortugalMapsMenu(){
+    drawMenu("Looking for parking spots - Load Map - Portugal Maps", {
+            {"Aveiro", loadPortugalAveiroGraph},
+            {"Braga", loadPortugalBragaGraph},
+            {"Coimbra", loadPortugalCoimbraGraph},
+            {"Ermesinde", loadPortugalErmesindeGraph},
+            {"Fafe", loadPortugalFafeGraph},
+            {"Gondomar", loadPortugalGondomarGraph},
+            {"Lisboa", loadPortugalLisboaGraph},
+            {"Maia", loadPortugalMaiaGraph},
+            {"Porto", loadPortugalPortoGraph},
+            {"Portugal", loadPortugalPortugalGraph},
+            {"Viseu", loadPortugalViseuGraph}
+    });
 }
 
 void loadEspinhoGraph(){
@@ -35,7 +109,7 @@ void loadPortoGraph(){
 }
 
 void loadMapMenu(){
-    drawMenu("À procura de estacionamento - Load Map", {
+    drawMenu("Looking for parking spots - Load Map", {
             {"Grid Graphs", loadGridGraphsMenu},
             {"Portugal Maps", loadPortugalMapsMenu},
             {"Espinho", loadEspinhoGraph},
@@ -52,8 +126,6 @@ int main() {
     #ifndef WIN32
         XInitThreads();
     #endif
-
-
 
     drawMenu("Looking for parking spots - Load Map", {
             {"Load Map", loadMapMenu},
