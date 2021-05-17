@@ -53,19 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2.5\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.2.5\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto
+CMAKE_SOURCE_DIR = D:\FEUP\CAL\gitproj\CAL_20-21
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug
+CMAKE_BINARY_DIR = D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project.dir/depend.make
@@ -79,44 +79,44 @@ include CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/main.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/main.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/src/main.cpp.obj"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\main.cpp.obj -c C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/src/main.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\main.cpp.obj -c D:\FEUP\CAL\gitproj\CAL_20-21\src\main.cpp
 
 CMakeFiles/Project.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/main.cpp.i"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\main.cpp > CMakeFiles\Project.dir\src\main.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\FEUP\CAL\gitproj\CAL_20-21\src\main.cpp > CMakeFiles\Project.dir\src\main.cpp.i
 
 CMakeFiles/Project.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/main.cpp.s"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\main.cpp -o CMakeFiles\Project.dir\src\main.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\FEUP\CAL\gitproj\CAL_20-21\src\main.cpp -o CMakeFiles\Project.dir\src\main.cpp.s
 
 CMakeFiles/Project.dir/src/Graph/load.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/Graph/load.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/Graph/load.cpp.obj: ../src/Graph/load.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/Graph/load.cpp.obj"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\Graph\load.cpp.obj -c C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/Graph/load.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\Graph\load.cpp.obj -c D:\FEUP\CAL\gitproj\CAL_20-21\src\Graph\load.cpp
 
 CMakeFiles/Project.dir/src/Graph/load.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/Graph/load.cpp.i"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp > CMakeFiles\Project.dir\src\Graph\load.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\FEUP\CAL\gitproj\CAL_20-21\src\Graph\load.cpp > CMakeFiles\Project.dir\src\Graph\load.cpp.i
 
 CMakeFiles/Project.dir/src/Graph/load.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/Graph/load.cpp.s"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\Graph\load.cpp -o CMakeFiles\Project.dir\src\Graph\load.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\FEUP\CAL\gitproj\CAL_20-21\src\Graph\load.cpp -o CMakeFiles\Project.dir\src\Graph\load.cpp.s
 
 CMakeFiles/Project.dir/src/UI/menu.cpp.obj: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/UI/menu.cpp.obj: CMakeFiles/Project.dir/includes_CXX.rsp
 CMakeFiles/Project.dir/src/UI/menu.cpp.obj: ../src/UI/menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/src/UI/menu.cpp.obj"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\UI\menu.cpp.obj -c C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/src/UI/menu.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Project.dir\src\UI\menu.cpp.obj -c D:\FEUP\CAL\gitproj\CAL_20-21\src\UI\menu.cpp
 
 CMakeFiles/Project.dir/src/UI/menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/UI/menu.cpp.i"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp > CMakeFiles\Project.dir\src\UI\menu.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\FEUP\CAL\gitproj\CAL_20-21\src\UI\menu.cpp > CMakeFiles\Project.dir\src\UI\menu.cpp.i
 
 CMakeFiles/Project.dir/src/UI/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/UI/menu.cpp.s"
-	C:\MinGW64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\src\UI\menu.cpp -o CMakeFiles\Project.dir\src\UI\menu.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\FEUP\CAL\gitproj\CAL_20-21\src\UI\menu.cpp -o CMakeFiles\Project.dir\src\UI\menu.cpp.s
 
 # Object files for target Project
 Project_OBJECTS = \
@@ -138,7 +138,7 @@ Project.exe: lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a
 Project.exe: CMakeFiles/Project.dir/linklibs.rsp
 Project.exe: CMakeFiles/Project.dir/objects1.rsp
 Project.exe: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -151,6 +151,6 @@ CMakeFiles/Project.dir/clean:
 .PHONY : CMakeFiles/Project.dir/clean
 
 CMakeFiles/Project.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug C:\Users\ricar\Desktop\FEUP\2ano\2sem\cal\Projeto\cmake-build-debug\CMakeFiles\Project.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\FEUP\CAL\gitproj\CAL_20-21 D:\FEUP\CAL\gitproj\CAL_20-21 D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles\Project.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Project.dir/depend
 

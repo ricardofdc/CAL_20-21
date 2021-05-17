@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/lib/GraphViewerCpp
+# Install script for directory: D:/FEUP/CAL/gitproj/CAL_20-21/lib/GraphViewerCpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/lib/GraphViewerCpp/SFML/cmake_install.cmake")
+  include("D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/lib/GraphViewerCpp/SFML/cmake_install.cmake")
 
 endif()
 

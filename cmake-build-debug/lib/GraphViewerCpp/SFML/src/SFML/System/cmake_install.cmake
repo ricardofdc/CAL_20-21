@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/lib/GraphViewerCpp/SFML/src/SFML/System
+# Install script for directory: D:/FEUP/CAL/gitproj/CAL_20-21/lib/GraphViewerCpp/SFML/src/SFML/System
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,15 +33,15 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY OPTIONAL FILES "D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/sfml-system-d-2.dll")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE SHARED_LIBRARY FILES "D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/sfml-system-d-2.dll")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-system-d-2.dll" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-system-d-2.dll")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/MinGW64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-system-d-2.dll")
+      execute_process(COMMAND "C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sfml-system-d-2.dll")
     endif()
   endif()
 endif()

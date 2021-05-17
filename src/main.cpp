@@ -12,7 +12,7 @@
     #include <X11/Xlib.h>
 #endif
 
-static Graph<int> graph;
+static Graph<unsigned long> graph;
 static GraphViewer gv;
 
 void load4x4GridGraph(){
@@ -97,7 +97,7 @@ void loadPortugalMapsMenu(){
 }
 
 void loadEspinhoGraph(){
-
+    graph = parseMap(&gv, "../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_strong_edges.txt");
 }
 
 void loadPenafielGraph(){

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/lib/GraphViewerCpp/SFML/src/SFML/Main
+# Install script for directory: D:/FEUP/CAL/gitproj/CAL_20-21/lib/GraphViewerCpp/SFML/src/SFML/Main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a")
 endif()
 

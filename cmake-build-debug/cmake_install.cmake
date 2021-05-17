@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto
+# Install script for directory: D:/FEUP/CAL/gitproj/CAL_20-21
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/lib/GraphViewerCpp/cmake_install.cmake")
+  include("D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/lib/GraphViewerCpp/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/ricar/Desktop/FEUP/2ano/2sem/cal/Projeto/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/FEUP/CAL/gitproj/CAL_20-21/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

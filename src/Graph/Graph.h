@@ -101,13 +101,13 @@ Vertex<T>* Edge<T>::getDest() const {
 template <class T>
 class Graph {
     std::vector<Vertex<T> *> vertexSet;
-    Vertex<T>* findVertex(const T &inf) const;
     void resetFlows();
     bool findAugmentationPath(Vertex<T> *s, Vertex<T> *t);
     void testAndVisit(std::queue< Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double residual);
     double findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t);
     void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double flow);
 public:
+    Vertex<T>* findVertex(const T &inf) const;
     std::vector<Vertex<T> *> getVertexSet() const;
     Vertex<T> *addVertex(const T &in);
     Edge<T> *addEdge(const T &sourc, const T &dest, double c, double f=0);
@@ -172,7 +172,6 @@ void Graph<T>::fordFulkerson(T source, T target) {
         augmentFlowAlongPath(s, t, f);
     }
 }
-
 template <class T>
 void Graph<T>::resetFlows() {
     for (auto v : vertexSet)
