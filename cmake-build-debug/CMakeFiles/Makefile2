@@ -273,8 +273,8 @@ lib/GraphViewerCpp/SFML/src/SFML/Window/clean: lib/GraphViewerCpp/SFML/src/SFML/
 # All Build rule for target.
 CMakeFiles/Project.dir/all: lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all
 CMakeFiles/Project.dir/all: lib/GraphViewerCpp/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
-CMakeFiles/Project.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 CMakeFiles/Project.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/Project.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Project"
@@ -302,8 +302,8 @@ CMakeFiles/Project.dir/clean:
 
 # All Build rule for target.
 lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
-lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\CMakeFiles\graphviewer.dir\build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\CMakeFiles\graphviewer.dir\build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\FEUP\CAL\gitproj\CAL_20-21\cmake-build-debug\CMakeFiles --progress-num=4,5,6,7,8 "Built target graphviewer"

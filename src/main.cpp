@@ -1,18 +1,10 @@
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <stdio.h>
-
-
 #include "UI/menu.h"
-#include "Graph/Graph.h"
 #include "Graph/load.h"
 
 #ifndef WIN32
     #include <X11/Xlib.h>
 #endif
 
-static Graph<unsigned long> graph;
 static GraphViewer gv;
 
 void load4x4GridGraph(){
@@ -97,7 +89,7 @@ void loadPortugalMapsMenu(){
 }
 
 void loadEspinhoGraph(){
-    graph = parseMap(&gv, "../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_strong_edges.txt");
+    parseMap(&gv, "../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_strong_edges.txt");
 }
 
 void loadPenafielGraph(){
@@ -119,13 +111,21 @@ void loadMapMenu(){
 }
 
 void startApp(){
+    gv.setEnabledNodes(false);      // Disable node drawing
+    gv.setEnabledEdgesText(false);  // Disable edge text drawing
 
+    gv.setZipEdges(true);
+
+    gv.createWindow(600,600);
+    gv.join();
 }
 
 int main() {
     #ifndef WIN32
         XInitThreads();
     #endif
+
+    gv.setCenter(sf::Vector2f(300, 300));
 
     drawMenu("Looking for parking spots - Load Map", {
             {"Load Map", loadMapMenu},

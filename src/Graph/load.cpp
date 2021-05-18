@@ -5,9 +5,7 @@
 #include "load.h"
 
 
-Graph<unsigned long> parseMap(GraphViewer * gv, string nodesPath, string edgesPath) {
-    Graph<unsigned long> g = Graph<unsigned long>();
-
+void parseMap(GraphViewer * gv, string nodesPath, string edgesPath) {
     ifstream nodesFile(nodesPath);
     ifstream edgesFile(edgesPath);
 
@@ -42,7 +40,6 @@ Graph<unsigned long> parseMap(GraphViewer * gv, string nodesPath, string edgesPa
         y = stod(currLine.substr(0, currLine.find_first_of(")")));
 
         gv->addNode(id, sf::Vector2f(x, y));
-        g.addVertex(id);
     }
 
     getline(edgesFile, currLine);
@@ -51,6 +48,8 @@ Graph<unsigned long> parseMap(GraphViewer * gv, string nodesPath, string edgesPa
     unsigned long id_ini;
     unsigned long id_final;
     double dist;
+    GraphViewer::Node * ini_node;
+    GraphViewer::Node * final_node;
 
     //parse edges
     for(int i=0; i<n; i++){
@@ -64,14 +63,12 @@ Graph<unsigned long> parseMap(GraphViewer * gv, string nodesPath, string edgesPa
 
         cout << id_ini << "," << id_final << endl;
 
-        gv->addEdge(n, gv->getNode(id_ini), gv->getNode(id_final));
+        ini_node = & gv->getNode(id_ini);
 
-        dist = sqrt(id_ini, id_final);
+        final_node = & gv->getNode(id_final);
 
-        g.addEdge(g.findVertex(id_ini), g.findVertex(id_final), dist, 1);
-
+        gv->addEdge(i, * ini_node, * final_node);
     }
-
 }
 
 

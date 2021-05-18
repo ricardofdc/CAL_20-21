@@ -702,16 +702,6 @@ lines.h
 
 ../lib/GraphViewerCpp/include/lines.h
 
-D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/Graph.h
-vector
--
-queue
--
-limits
--
-cmath
--
-
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/load.cpp
 load.h
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/load.h
@@ -725,12 +715,12 @@ fstream
 -
 sstream
 -
-Graph.h
-D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/Graph.h
 graphviewer.h
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/graphviewer.h
 ../Utils/exceptions.h
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Utils/exceptions.h
+tgmath.h
+-
 
 D:/FEUP/CAL/gitproj/CAL_20-21/src/UI/menu.h
 iostream
@@ -741,18 +731,8 @@ vector
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Utils/exceptions.h
 
 D:/FEUP/CAL/gitproj/CAL_20-21/src/main.cpp
-fstream
--
-string
--
-sstream
--
-stdio.h
--
 UI/menu.h
 D:/FEUP/CAL/gitproj/CAL_20-21/src/UI/menu.h
-Graph/Graph.h
-D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/Graph.h
 Graph/load.h
 D:/FEUP/CAL/gitproj/CAL_20-21/src/Graph/load.h
 X11/Xlib.h
