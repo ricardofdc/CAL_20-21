@@ -11,10 +11,10 @@
  * ================================================================================================
  */
 
-Vertex::Vertex(unsigned long id): id(id) {}
+Vertex::Vertex(unsigned long id, long double x, long double y): id(id), x(x), y(y) {}
 
-void Vertex::addEdge(Vertex *d) {
-    adj.push_back(new Edge(this, d));
+void Vertex::addEdge(Edge *e) {
+    adj.push_back(e);
 }
 
 bool Vertex::operator<(Vertex & vertex) const {
@@ -33,7 +33,7 @@ void Vertex::setX(double x) {
     this->x = x;
 }
 
-double Vertex::getX() const {
+long double Vertex::getX() const {
     return this->x;
 }
 
@@ -41,7 +41,7 @@ void Vertex::setY(double y) {
     this->y = y;
 }
 
-double Vertex::getY() const {
+long double Vertex::getY() const {
     return this->y;
 }
 
@@ -50,13 +50,25 @@ double Vertex::getY() const {
  * ================================================================================================
  */
 
-Edge::Edge(Vertex *o, Vertex *d):
-        orig(o), dest(d){
+Edge::Edge(unsigned long id, Vertex *o, Vertex *d):
+        id(id), orig(o), dest(d){
     this->distance = sqrt(pow((o->getX()+d->getX()),2) + pow((o->getY()+d->getY()),2));
 }
 
-double Edge::getDistance() const {
+long double Edge::getDistance() const {
     return this->distance;
+}
+
+unsigned long Edge::getId() const {
+    return this->id;
+}
+
+Vertex *Edge::getOrig() const {
+    return this->orig;
+}
+
+Vertex *Edge::getDest() const {
+    return this->dest;
 }
 
 
@@ -65,26 +77,33 @@ double Edge::getDistance() const {
  * ================================================================================================
  */
 
-Vertex * Graph::addVertex(const unsigned long &id) {
+Vertex * Graph::addVertex(unsigned long id, long double x, long double y) {
     Vertex *v = findVertex(id);
     if (v != nullptr)
         return v;
-    v = new Vertex(id);
+    v = new Vertex(id, x, y);
     vertexSet.push_back(v);
+
+    if(x<minX) minX = x;
+    if(x>maxX) maxX = x;
+    if(y<minY) minY = y;
+    if(y>maxY) maxY = y;
+
     return v;
 }
 
-Edge * Graph::addEdge(const unsigned long &sourc, const unsigned long &dest) {
+Edge * Graph::addEdge(unsigned long id, unsigned long sourc, unsigned long dest) {
     auto s = findVertex(sourc);
     auto d = findVertex(dest);
     if (s == nullptr || d == nullptr)
         return nullptr;
-    Edge *e = new Edge(s, d);
-    s->addEdge(d);
+    Edge *e = new Edge(id, s, d);
+    s->addEdge(e);
+    edgeSet.push_back(e);
     return e;
 }
 
-Vertex* Graph::findVertex(const unsigned long &id) const {
+Vertex* Graph::findVertex(unsigned long id) const {
     for (auto v : vertexSet)
         if (v->id == INF)
             return v;
@@ -93,5 +112,25 @@ Vertex* Graph::findVertex(const unsigned long &id) const {
 
 vector<Vertex *> Graph::getVertexSet() const {
     return vertexSet;
+}
+
+vector<Edge *> Graph::getEdgeSet() const {
+    return edgeSet;
+}
+
+long double Graph::getMinX() const {
+    return minX;
+}
+
+long double Graph::getMaxX() const {
+    return maxX;
+}
+
+long double Graph::getMinY() const {
+    return minY;
+}
+
+long double Graph::getMaxY() const {
+    return maxY;
 }
 

@@ -144,18 +144,40 @@ void loadMapMenu(){
 }
 
 void startApp(){
+
+    // export info from Graph to Graphviewer
+    vector<Vertex *> vertexes = graph.getVertexSet();
+    vector<Edge *> edges = graph.getEdgeSet();
+
+    if(vertexes.empty()){
+        cout << "Please load a map before continue!" << endl;
+        return;
+    }
+
+    long double minX = graph.getMinX();
+    long double minY = graph.getMinY();
+    long double maxX = graph.getMaxX();
+    long double maxY = graph.getMaxY();
+
+    cout << endl << minX << " " << maxX << " " << minY << " " << maxY << " " << min(max(maxX-minX, maxY-minY), (long double)10000.0) << endl;
+
     GraphViewer gv;
-    gv.setCenter(sf::Vector2f(300, 300));
+    gv.setScale(800.0/min(max(maxX-minX, maxY-minY), (long double)10000.0));
+    gv.setCenter(sf::Vector2f((minX+maxX)/2, (minY+maxY)/2));
 
-    // TODO: export info from Graph to Graphviewer
-
+    for(Vertex *v : vertexes){
+        gv.addNode(v->getId(), sf::Vector2f(v->getX(), v->getY()));
+    }
+    for(Edge *e : edges){
+        gv.addEdge(e->getId(), gv.getNode(e->getOrig()->getId()), gv.getNode(e->getDest()->getId()));
+    }
 
     gv.setEnabledNodes(false);      // Disable node drawing
     gv.setEnabledEdgesText(false);  // Disable edge text drawing
 
     gv.setZipEdges(true);
 
-    gv.createWindow(600,600);
+    gv.createWindow(800,800);
     gv.join();
 }
 

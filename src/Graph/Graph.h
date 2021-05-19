@@ -11,6 +11,8 @@
 using namespace std;
 
 constexpr auto INF = std::numeric_limits<unsigned long>::max();
+constexpr auto INF_DOUBLE = std::numeric_limits<long double>::max();
+constexpr auto NEG_INF_DOUBLE = std::numeric_limits<long double>::min();
 
 class Vertex;
 class Edge;
@@ -25,19 +27,19 @@ class Graph;
 
 class Vertex {
     unsigned long id;
-    double x;   //for graphviewer
-    double y;   //for graphviewer
+    long double x;   //for graphviewer
+    long double y;   //for graphviewer
 
     vector<Edge* > adj;  // outgoing edges
 
     bool visited;  // for path finding
     Edge *path; // for path finding
-    double dist;   // for path finding
+    long double dist;   // for path finding
     int queueIndex = 0; // required by MutablePriorityQueue
 
 
-    Vertex(unsigned long id);
-    void addEdge(Vertex *d);
+    Vertex(unsigned long id, long double x, long double y);
+    void addEdge(Edge *e);
     bool operator<(Vertex & vertex) const; // required by MutablePriorityQueue
 
 public:
@@ -45,8 +47,8 @@ public:
     vector<Edge* > getAdj() const;
     void setX(double x);
     void setY(double y);
-    double getX() const;
-    double getY() const;
+    long double getX() const;
+    long double getY() const;
     friend class Graph;
     friend class MutablePriorityQueue<Vertex>;
 };
@@ -57,16 +59,20 @@ public:
  */
 
 class Edge {
+    unsigned long id;
     Vertex * orig;
     Vertex * dest;
-    double distance;
+    long double distance;
 
-    Edge(Vertex *o, Vertex *d);
+    Edge(unsigned long id, Vertex *o, Vertex *d);
 
 public:
     friend class Graph;
     friend class Vertex;
-    double getDistance() const;
+    long double getDistance() const;
+    unsigned long getId() const;
+    Vertex * getOrig() const;
+    Vertex * getDest() const;
 };
 
 /* ================================================================================================
@@ -76,12 +82,22 @@ public:
 
 class Graph {
     vector<Vertex *> vertexSet;
+    vector<Edge *> edgeSet;
+    long double minX = INF_DOUBLE;
+    long double maxX = NEG_INF_DOUBLE;
+    long double minY = INF_DOUBLE;
+    long double maxY = NEG_INF_DOUBLE;
 
 public:
-    Vertex* findVertex(const unsigned long &id) const;
+    Vertex* findVertex(unsigned long id) const;
     vector<Vertex *> getVertexSet() const;
-    Vertex *addVertex(const unsigned long &id);
-    Edge *addEdge(const unsigned long &sourc, const unsigned long &dest);
+    vector<Edge *> getEdgeSet() const;
+    Vertex *addVertex(unsigned long id, long double x, long double y);
+    Edge *addEdge(unsigned long id, unsigned long sourc, unsigned long dest);
+    long double getMinX() const;
+    long double getMaxX() const;
+    long double getMinY() const;
+    long double getMaxY() const;
 };
 
 
