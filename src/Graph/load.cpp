@@ -56,16 +56,14 @@ Graph parseMap(string nodesPath, string edgesPath) {
 
     //parse edges
     for(int i=0; i<n; i++){
-        //cout << i << endl;
 
         getline(edgesFile, currLine);
 
         id_ini = stoul(currLine.substr(1, currLine.find_first_of(",")));
+
         currLine = currLine.substr(currLine.find_first_of(",") + 1);
 
         id_final = stoul(currLine.substr(0, currLine.find_first_of(")")));
-
-        //cout << id_ini << ',' << id_final << endl;
 
         g.addEdge(i, id_ini, id_final);
     }

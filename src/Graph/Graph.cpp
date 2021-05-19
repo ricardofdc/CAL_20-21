@@ -105,7 +105,7 @@ Edge * Graph::addEdge(unsigned long id, unsigned long sourc, unsigned long dest)
 
 Vertex* Graph::findVertex(unsigned long id) const {
     for (auto v : vertexSet)
-        if (v->id == INF)
+        if (v->id == id)
             return v;
     return nullptr;
 }

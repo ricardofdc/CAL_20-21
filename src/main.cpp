@@ -159,19 +159,15 @@ void startApp(){
     long double maxX = graph.getMaxX();
     long double maxY = graph.getMaxY();
 
-    cout << endl << minX << " " << maxX << " " << minY << " " << maxY << " " << min(max(maxX-minX, maxY-minY), (long double)10000.0) << endl;
-
     GraphViewer gv;
-    gv.setScale(800.0/min(max(maxX-minX, maxY-minY), (long double)10000.0));
+    gv.setScale(max(maxX-minX, maxY-minY)/800);
     gv.setCenter(sf::Vector2f((minX+maxX)/2, (minY+maxY)/2));
-    cout << vertexes.size()<<'v'<< endl;
+
     for(Vertex *v : vertexes){
-        //cout << v->getId()<< endl;
         gv.addNode(v->getId(), sf::Vector2f(v->getX(), v->getY()));
     }
-    cout << edges.size()<<'e'<< endl;
+
     for(Edge *e : edges){
-        //cout << e->getId()<< endl;
         gv.addEdge(e->getId(), gv.getNode(e->getOrig()->getId()), gv.getNode(e->getDest()->getId()));
     }
 
