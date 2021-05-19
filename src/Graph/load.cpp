@@ -5,8 +5,8 @@
 #include "load.h"
 
 
-Graph<unsigned long> parseMap(string nodesPath, string edgesPath) {
-    Graph<unsigned long> g;
+Graph parseMap(string nodesPath, string edgesPath) {
+    Graph g;
 
     ifstream nodesFile(nodesPath);
     ifstream edgesFile(edgesPath);
@@ -41,7 +41,7 @@ Graph<unsigned long> parseMap(string nodesPath, string edgesPath) {
 
         y = stod(currLine.substr(0, currLine.find_first_of(")")));
 
-        Vertex<unsigned long> *vertex = g.addVertex(id);
+        Vertex *vertex = g.addVertex(id);
         vertex->setX(x);
         vertex->setY(y);
     }
@@ -67,11 +67,11 @@ Graph<unsigned long> parseMap(string nodesPath, string edgesPath) {
 
         cout << id_ini << "," << id_final << endl;
 
-        ini_node = & gv->getNode(id_ini);
+        //ini_node = & gv->getNode(id_ini);
 
-        final_node = & gv->getNode(id_final);
+        //final_node = & gv->getNode(id_final);
 
-        gv->addEdge(i, * ini_node, * final_node);
+        //gv->addEdge(i, * ini_node, * final_node);
     }
 
     return g;

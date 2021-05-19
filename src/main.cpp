@@ -5,7 +5,7 @@
     #include <X11/Xlib.h>
 #endif
 
-static Graph<unsigned long> graph;
+static Graph graph;
 
 void load4x4GridGraph(){
     graph = parseMap("../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");

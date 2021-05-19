@@ -19,4 +19,4 @@ using namespace std;
 
 #endif //PROJETO_LOAD_H
 
-Graph<unsigned long> parseMap(string nodesPath, string edgesPath);
+Graph parseMap(string nodesPath, string edgesPath);
