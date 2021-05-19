@@ -33,7 +33,6 @@ Graph parseMap(string nodesPath, string edgesPath) {
     // parse nodes
     for (int i = 0; i < n; i++) {
         getline(nodesFile, currLine);
-        //cout << currLine << endl;
 
         id = stoul(currLine.substr(1, currLine.find_first_of(",")));
         currLine = currLine.substr(currLine.find_first_of(",") + 1);
@@ -44,22 +43,29 @@ Graph parseMap(string nodesPath, string edgesPath) {
         y = stold(currLine.substr(0, currLine.find_first_of(")")));
 
         g.addVertex(id, x, y);
+
     }
+
 
     getline(edgesFile, currLine);
     n = stoi(currLine);
+
 
     unsigned long id_ini;
     unsigned long id_final;
 
     //parse edges
-    for(unsigned long i=0; i<n; i++){
+    for(int i=0; i<n; i++){
+        //cout << i << endl;
+
         getline(edgesFile, currLine);
 
         id_ini = stoul(currLine.substr(1, currLine.find_first_of(",")));
         currLine = currLine.substr(currLine.find_first_of(",") + 1);
 
         id_final = stoul(currLine.substr(0, currLine.find_first_of(")")));
+
+        //cout << id_ini << ',' << id_final << endl;
 
         g.addEdge(i, id_ini, id_final);
     }
