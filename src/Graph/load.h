@@ -3,9 +3,12 @@
 //
 
 #include <string>
+#include <iostream>
 #include <fstream>
-#include "Graph.h"
+#include <sstream>
 #include "graphviewer.h"
+#include "../Utils/exceptions.h"
+#include <tgmath.h>
 
 using namespace std;
 
@@ -15,4 +18,4 @@ using namespace std;
 
 #endif //PROJETO_LOAD_H
 
-Graph<int> parseMap(string nodesPath, string edgesPath);
+void parseMap(GraphViewer * gv, string nodesPath, string edgesPath);
