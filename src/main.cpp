@@ -5,18 +5,18 @@
     #include <X11/Xlib.h>
 #endif
 
-static GraphViewer gv;
+static Graph<unsigned long> graph;
 
 void load4x4GridGraph(){
-    parseMap(&gv, "../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");
+    graph = parseMap("../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");
 }
 
 void load8x8GridGraph(){
-    parseMap(&gv, "../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
+    graph = parseMap("../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
 }
 
 void load16x16GridGraph(){
-    parseMap(&gv, "../resources/Mapas/GridGraphs/16x16/nodes.txt", "../resources/Mapas/GridGraphs/16x16/edges.txt");
+    graph = parseMap("../resources/Mapas/GridGraphs/16x16/nodes.txt", "../resources/Mapas/GridGraphs/16x16/edges.txt");
 }
 
 void loadGridGraphsMenu(){
@@ -28,47 +28,47 @@ void loadGridGraphsMenu(){
 }
 
 void loadPortugalAveiroGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_aveiro.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_aveiro.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_aveiro.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_aveiro.txt");
 }
 
 void loadPortugalBragaGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_braga.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_braga.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_braga.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_braga.txt");
 }
 
 void loadPortugalCoimbraGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_coimbra.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_coimbra.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_coimbra.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_coimbra.txt");
 }
 
 void loadPortugalErmesindeGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_ermesinde.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_ermesinde.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_ermesinde.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_ermesinde.txt");
 }
 
 void loadPortugalFafeGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_fafe.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_fafe.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_fafe.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_fafe.txt");
 }
 
 void loadPortugalGondomarGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_gondomar.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_gondomar.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_gondomar.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_gondomar.txt");
 }
 
 void loadPortugalLisboaGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_lisboa.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_lisboa.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_lisboa.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_lisboa.txt");
 }
 
 void loadPortugalMaiaGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_maia.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_maia.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_maia.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_maia.txt");
 }
 
 void loadPortugalPortoGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_porto.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_porto.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_porto.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_porto.txt");
 }
 
 void loadPortugalPortugalGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_portugal.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_portugal.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_portugal.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_portugal.txt");
 }
 
 void loadPortugalViseuGraph(){
-    parseMap(&gv, "../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_viseu.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_viseu.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_viseu.txt", "../resources/Mapas/PortugalMaps/Aveiro/edges_viseu.txt");
 }
 
 
@@ -89,13 +89,11 @@ void loadPortugalMapsMenu(){
 }
 
 void loadEspinhoFullGraph(){
-    parseMap(&gv, "../resources/Mapas_Espinho/espinho_full_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_full_edges.txt");
-    gv.setBackground("../resources/Mapas_Espinho/espinho_full.png");
+    graph = parseMap("../resources/Mapas_Espinho/espinho_full_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_full_edges.txt");
 }
 
 void loadEspinhoStrongGraph(){
-    parseMap(&gv, "../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_strong_edges.txt");
-    gv.setBackground("../resources/Mapas_Espinho/espinho_strong_component.png");
+    graph = parseMap("../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt", "../resources/Mapas_Espinho/espinho_strong_edges.txt");
 }
 
 void loadEspinhoMenu(){
@@ -106,13 +104,11 @@ void loadEspinhoMenu(){
 }
 
 void loadPenafielFullGraph(){
-    parseMap(&gv, "../resources/Mapas_Penafiel/penafiel_full_nodes_xy.txt", "../resources/Mapas_Penafiel/penafiel_full_edges.txt");
-    gv.setBackground("../resources/Mapas_Penafiel/penafiel_full.png");
+    graph = parseMap("../resources/Mapas_Penafiel/penafiel_full_nodes_xy.txt", "../resources/Mapas_Penafiel/penafiel_full_edges.txt");
 }
 
 void loadPenafielStrongGraph(){
-    parseMap(&gv, "../resources/Mapas_Penafiel/penafiel_strong_nodes_xy.txt", "../resources/Mapas_Penafiel/penafiel_strong_edges.txt");
-    gv.setBackground("../resources/Mapas_Penafiel/penafiel_strong_component.png");
+    graph = parseMap("../resources/Mapas_Penafiel/penafiel_strong_nodes_xy.txt", "../resources/Mapas_Penafiel/penafiel_strong_edges.txt");
 }
 
 void loadPenafielMenu(){
@@ -123,13 +119,11 @@ void loadPenafielMenu(){
 }
 
 void loadPortoFullGraph(){
-    parseMap(&gv, "../resources/Mapas_Porto/porto_full_nodes_xy.txt", "../resources/Mapas_Porto/porto_full_edges.txt");
-    gv.setBackground("../resources/Mapas_Porto/porto_full.png");
+    graph = parseMap("../resources/Mapas_Porto/porto_full_nodes_xy.txt", "../resources/Mapas_Porto/porto_full_edges.txt");
 }
 
 void loadPortoStrongGraph(){
-    parseMap(&gv, "../resources/Mapas_Porto/porto_strong_nodes_xy.txt", "../resources/Mapas_Porto/porto_strong_edges.txt");
-    gv.setBackground("../resources/Mapas_Porto/porto_strong_component.png");
+    graph = parseMap("../resources/Mapas_Porto/porto_strong_nodes_xy.txt", "../resources/Mapas_Porto/porto_strong_edges.txt");
 }
 
 void loadPortoMenu(){
@@ -150,6 +144,12 @@ void loadMapMenu(){
 }
 
 void startApp(){
+    GraphViewer gv;
+    gv.setCenter(sf::Vector2f(300, 300));
+
+    // TODO: export info from Graph to Graphviewer
+
+
     gv.setEnabledNodes(false);      // Disable node drawing
     gv.setEnabledEdgesText(false);  // Disable edge text drawing
 
@@ -163,8 +163,6 @@ int main() {
     #ifndef WIN32
         XInitThreads();
     #endif
-
-    gv.setCenter(sf::Vector2f(300, 300));
 
     drawMenu("Looking for parking spots - Load Map", {
             {"Load Map", loadMapMenu},

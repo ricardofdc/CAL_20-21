@@ -5,7 +5,9 @@
 #include "load.h"
 
 
-void parseMap(GraphViewer * gv, string nodesPath, string edgesPath) {
+Graph<unsigned long> parseMap(string nodesPath, string edgesPath) {
+    Graph<unsigned long> g;
+
     ifstream nodesFile(nodesPath);
     ifstream edgesFile(edgesPath);
 
@@ -39,7 +41,9 @@ void parseMap(GraphViewer * gv, string nodesPath, string edgesPath) {
 
         y = stod(currLine.substr(0, currLine.find_first_of(")")));
 
-        gv->addNode(id, sf::Vector2f(x, y));
+        Vertex<unsigned long> *vertex = g.addVertex(id);
+        vertex->setX(x);
+        vertex->setY(y);
     }
 
     getline(edgesFile, currLine);
@@ -69,6 +73,8 @@ void parseMap(GraphViewer * gv, string nodesPath, string edgesPath) {
 
         gv->addEdge(i, * ini_node, * final_node);
     }
+
+    return g;
 }
 
 
