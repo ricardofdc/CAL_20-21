@@ -98,6 +98,14 @@ public:
     long double getMaxX() const;
     long double getMinY() const;
     long double getMaxY() const;
+
+    /// Dijkstra
+    Vertex *initSingleSource(const unsigned long &origin);
+    bool relax(Vertex *v, Vertex *w, long double weight);
+    void dijkstraShortestPath(const int &origin);
+    vector<int> getPath(const int &origin, const int &dest) const;
+    void unweightedShortestPath(const int &orig);
+    void bellmanFordShortestPath(const int &orig);
 };
 
 

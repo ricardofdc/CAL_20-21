@@ -2,6 +2,7 @@
 // Created by ricar on 19/05/2021.
 //
 
+#include <algorithm>
 #include "Graph.h"
 
 
@@ -134,3 +135,98 @@ long double Graph::getMaxY() const {
     return maxY;
 }
 
+/**
+ * Initializes single-source shortest path data (path, dist).
+ * Receives the content of the source vertex and returns a pointer to the source vertex.
+ * Used by all single-source shortest path algorithms.
+*/
+Vertex *Graph::initSingleSource(const unsigned long &origin) {
+    for (auto v : vertexSet) {
+        v->dist = INF;
+        v->path = nullptr;
+    }
+    auto s = findVertex(origin);
+    s->dist = 0;
+    return s;
+}
+
+/**
+ * Analyzes an edge in single-source shortest path algorithm.
+ * Returns true if the target vertex was relaxed (dist, path).
+ * Used by all single-source shortest path algorithms.
+*/
+bool Graph::relax(Vertex *v, Vertex *w, long double weight) {
+    if (v->dist + weight < w->dist) {
+        w->dist = v->dist + weight;
+        w->path = v->path;
+        return true;
+    } else
+        return false;
+}
+
+///**
+// * Analyzes an edge in single-source shortest path algorithm.
+// * Returns true if the target vertex was relaxed (dist, path).
+// * Used by all single-source shortest path algorithms.
+//*/
+//bool Graph::relax(Vertex *v, Vertex *w, long double weight) {
+//    if (v->dist + weight < w->dist) {
+//        w->dist = v->dist + weight;
+//        w->path = v->path;
+//        return true;
+//    } else
+//        return false;
+//}
+
+/**
+ * Dijkstra algorithm.
+*/
+void Graph::dijkstraShortestPath(const int &origin) {
+    auto s = initSingleSource(origin);
+    MutablePriorityQueue<Vertex> q;
+    q.insert(s);
+    while (!q.empty()) {
+        auto v = q.extractMin();
+        for (auto e : v->adj) {
+            auto oldDist = e->dest->dist;
+            if (relax(v, e->dest, e->distance)) { if (oldDist == INF)q.insert(e->dest); else q.decreaseKey(e->dest); }
+        }
+    }
+}
+
+vector<int> Graph::getPath(const int &origin, const int &dest) const {
+    vector<int> res;
+    auto v = findVertex(dest);
+    if (v == nullptr || v->dist == INF) // missing or disconnected
+        return res;
+    for (; v != nullptr; v = v->path->orig) //TODO: VERIFICAR ISTO -> "v->path->orig"  NO DO STOR TAVA "v->path"
+        res.push_back(v->id);
+
+    reverse(res.begin(), res.end());
+    return res;
+}
+
+void Graph::unweightedShortestPath(const int &orig) {
+    auto s = initSingleSource(orig);
+    queue<Vertex *> q;
+    q.push(s);
+    while (!q.empty()) {
+        auto v = q.front();
+        q.pop();
+        for (auto e: v->adj)
+            if (relax(v, e->dest, 1))
+                q.push(e->dest);
+    }
+}
+
+void Graph::bellmanFordShortestPath(const int &orig) {
+    initSingleSource(orig);
+    for (unsigned i = 1; i < vertexSet.size(); i++)
+        for (auto v: vertexSet)
+            for (auto e: v->adj)
+                relax(v, e->dest, e->distance);
+    for (auto v: vertexSet)
+        for (auto e: v->adj)
+            if (relax(v, e->dest, e->distance))
+                cout << "Negative cycle!" << endl;
+}
