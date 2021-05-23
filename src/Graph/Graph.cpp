@@ -234,11 +234,18 @@ void Graph::dfsVisit(Vertex *v, vector<int> & vec) const {
 
 bool Graph::isConnected(){
 
-//    G
-//
-//    for (auto v : vertexSet){
-//      vec1.pushback
-//    }
+    Graph aux;
+    for (auto v : vertexSet)
+        aux.vertexSet.push_back(v);
+    for (auto e : edgeSet)
+        aux.edgeSet.push_back(e);
 
+    vector<int> vec1 = dfs();
+    vector<int> vec2 = aux.dfs();
 
+    for ( int i = 0; i < vertexSet.size(); i++)
+        if (!aux.vertexSet[i] -> visited || !vertexSet[i] -> visited)
+            return false;
+
+    return true;
 }
