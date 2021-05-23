@@ -189,17 +189,23 @@ void Graph::dijkstraShortestPath(const int &origin) {
         auto v = q.extractMin();
         for (auto e : v->adj) {
             auto oldDist = e->dest->dist;
-            if (relax(v, e->dest, e->distance)) { if (oldDist == INF)q.insert(e->dest); else q.decreaseKey(e->dest); }
+            if (relax(v, e->dest, e->distance)) {
+                if (oldDist == INF)
+                    q.insert(e->dest);
+                else
+                    q.decreaseKey(e->dest);
+                e->dest->path = v;
+            }
         }
     }
 }
 
-vector<int> Graph::getPath(const int &origin, const int &dest) const {
-    vector<int> res;
+vector<unsigned long> Graph::getPath(const unsigned long &origin, const unsigned long &dest) const {
+    vector<unsigned long> res;
     auto v = findVertex(dest);
     if (v == nullptr || v->dist == INF) // missing or disconnected
         return res;
-    for (; v != nullptr; v = v->path->orig) //TODO: VERIFICAR ISTO -> "v->path->orig"  NO DO STOR TAVA "v->path"
+    for (; v != nullptr; v = v->path) {
         res.push_back(v->id);
 
     reverse(res.begin(), res.end());
