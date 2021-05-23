@@ -110,8 +110,6 @@ public:
     vector<int> dfs() const;
     void dfsVisit(Vertex *v, vector<int> & vec) const;
     bool isConnected();
-
-    vector<int> dfs() const;
 };
 
 
