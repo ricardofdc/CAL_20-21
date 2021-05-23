@@ -230,3 +230,28 @@ void Graph::bellmanFordShortestPath(const int &orig) {
             if (relax(v, e->dest, e->distance))
                 cout << "Negative cycle!" << endl;
 }
+
+vector<int> Graph::dfs() const {
+    vector<int> vec;
+
+    for (auto v : vertexSet)
+        v -> visited = false;
+
+    for (auto v : vertexSet)
+        if ( !v -> visited)
+            dfsVisit(v, vec);
+
+    return vec;
+}
+
+void Graph::dfsVisit(Vertex *v, vector<int> & vec) const {
+    v -> visited = true;
+
+    vec.push_back(v -> id);
+    for (auto & e : v -> adj){
+
+        auto w = e -> dest;
+        if ( !w -> visited)
+            dfsVisit(w, vec);
+    }
+}

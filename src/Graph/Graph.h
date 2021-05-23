@@ -106,6 +106,8 @@ public:
     vector<int> getPath(const int &origin, const int &dest) const;
     void unweightedShortestPath(const int &orig);
     void bellmanFordShortestPath(const int &orig);
+    vector<int> dfs() const;
+    void dfsVisit(Vertex *v, vector<int> & vec) const;
 };
 
 
