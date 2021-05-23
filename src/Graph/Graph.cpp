@@ -115,6 +115,12 @@ vector<Vertex *> Graph::getVertexSet() const {
     return vertexSet;
 }
 
+Edge * Graph::getEdgeFromTo(const unsigned long & from, const unsigned long & to) const {
+    for (auto e : edgeSet)
+        if (e->orig->id == from && e->dest->id == to)
+            return e;
+}
+
 vector<Edge *> Graph::getEdgeSet() const {
     return edgeSet;
 }
@@ -164,24 +170,10 @@ bool Graph::relax(Vertex *v, Vertex *w, long double weight) {
         return false;
 }
 
-///**
-// * Analyzes an edge in single-source shortest path algorithm.
-// * Returns true if the target vertex was relaxed (dist, path).
-// * Used by all single-source shortest path algorithms.
-//*/
-//bool Graph::relax(Vertex *v, Vertex *w, long double weight) {
-//    if (v->dist + weight < w->dist) {
-//        w->dist = v->dist + weight;
-//        w->path = v->path;
-//        return true;
-//    } else
-//        return false;
-//}
-
 /**
  * Dijkstra algorithm.
 */
-void Graph::dijkstraShortestPath(const int &origin) {
+void Graph::dijkstraShortestPath(const unsigned long &origin) {
     auto s = initSingleSource(origin);
     MutablePriorityQueue<Vertex> q;
     q.insert(s);
@@ -207,37 +199,15 @@ vector<unsigned long> Graph::getPath(const unsigned long &origin, const unsigned
         return res;
     for (; v != nullptr; v = v->path) {
         res.push_back(v->id);
+    }
 
     reverse(res.begin(), res.end());
     return res;
 }
 
-void Graph::unweightedShortestPath(const int &orig) {
-    auto s = initSingleSource(orig);
-    queue<Vertex *> q;
-    q.push(s);
-    while (!q.empty()) {
-        auto v = q.front();
-        q.pop();
-        for (auto e: v->adj)
-            if (relax(v, e->dest, 1))
-                q.push(e->dest);
-    }
-}
-
-void Graph::bellmanFordShortestPath(const int &orig) {
-    initSingleSource(orig);
-    for (unsigned i = 1; i < vertexSet.size(); i++)
-        for (auto v: vertexSet)
-            for (auto e: v->adj)
-                relax(v, e->dest, e->distance);
-    for (auto v: vertexSet)
-        for (auto e: v->adj)
-            if (relax(v, e->dest, e->distance))
-                cout << "Negative cycle!" << endl;
-}
 
 vector<int> Graph::dfs() const {
+
     vector<int> vec;
 
     for (auto v : vertexSet)
@@ -260,4 +230,15 @@ void Graph::dfsVisit(Vertex *v, vector<int> & vec) const {
         if ( !w -> visited)
             dfsVisit(w, vec);
     }
+}
+
+bool Graph::isConnected(){
+
+//    G
+//
+//    for (auto v : vertexSet){
+//      vec1.pushback
+//    }
+
+
 }

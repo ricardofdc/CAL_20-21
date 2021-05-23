@@ -33,7 +33,7 @@ class Vertex {
     vector<Edge* > adj;  // outgoing edges
 
     bool visited;  // for path finding
-    Edge *path; // for path finding
+    Vertex *path; // for path finding
     long double dist;   // for path finding
     int queueIndex = 0; // required by MutablePriorityQueue
 
@@ -92,6 +92,7 @@ public:
     Vertex* findVertex(unsigned long id) const;
     vector<Vertex *> getVertexSet() const;
     vector<Edge *> getEdgeSet() const;
+    Edge * getEdgeFromTo(const unsigned long & from, const unsigned long & to) const;
     Vertex *addVertex(unsigned long id, long double x, long double y);
     Edge *addEdge(unsigned long id, unsigned long sourc, unsigned long dest);
     long double getMinX() const;
@@ -102,12 +103,15 @@ public:
     /// Dijkstra
     Vertex *initSingleSource(const unsigned long &origin);
     bool relax(Vertex *v, Vertex *w, long double weight);
-    void dijkstraShortestPath(const int &origin);
-    vector<int> getPath(const int &origin, const int &dest) const;
+    void dijkstraShortestPath(const unsigned long &origin);
+    vector<unsigned long> getPath(const unsigned long &origin, const unsigned long &dest) const;
     void unweightedShortestPath(const int &orig);
     void bellmanFordShortestPath(const int &orig);
     vector<int> dfs() const;
     void dfsVisit(Vertex *v, vector<int> & vec) const;
+    bool isConnected();
+
+    vector<int> dfs() const;
 };
 
 

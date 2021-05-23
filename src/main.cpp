@@ -12,12 +12,10 @@ GraphViewer * gv = new GraphViewer();
 
 void load4x4GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");
-    bg = none;
 }
 
 void load8x8GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
-    bg = none;
 }
 
 void load16x16GridGraph() {
@@ -283,36 +281,11 @@ void startApp() {
         edge.setThickness(1);
         edge.setColor(sf::Color::Black);
     }
-    /*
-    switch (bg) {
-        case none:
-            gv.clearBackground();
-            break;
-        case espinho_full:
-            gv.setBackground("../resources/Mapas_Espinho/espinho_full.png",sf::Vector2f(0, 800), sf::Vector2f(max(maxX-minX, maxY-minY)/800,max(maxX-minX, maxY-minY)/800));
-            break;
-        case espinho_strong:
-            gv.setBackground("../resources/Mapas_Espinho/espinho_strong_component.png",sf::Vector2f(-3675, -2400), sf::Vector2f(8.9,8.9));
-            break;
-        case penafiel_full:
-            gv.setBackground("../resources/Mapas_Penafiel/penafiel_full.png",sf::Vector2f((minX+maxX)/2, (minY+maxY)/2));
-            break;
-        case penafiel_strong:
-            gv.setBackground("../resources/Mapas_Penafiel/penafiel_strong_component.png",sf::Vector2f((minX+maxX)/2, (minY+maxY)/2));
-            break;
-        case porto_full:
-            gv.setBackground("../resources/Mapas_Porto/espinho_full.png",sf::Vector2f((minX+maxX)/2, (minY+maxY)/2));
-            break;
-        case porto_strong:
-            gv.setBackground("../resources/Mapas_Porto/porto_strong_component.png",sf::Vector2f((minX+maxX)/2, (minY+maxY)));
-            break;
-    }
-    */
 
-    gv.setEnabledNodes(true);      // Disable node drawing
-    gv.setEnabledEdgesText(true);  // Disable edge text drawing
+    gv->setEnabledNodes(true);      // Disable node drawing
+    gv->setEnabledEdgesText(true);  // Disable edge text drawing
 
-    gv.setZipEdges(true);
+    gv->setZipEdges(true);
 
     gv->createWindow(800, 800);
 
