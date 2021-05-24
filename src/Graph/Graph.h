@@ -8,6 +8,9 @@
 #include <cmath>
 #include <algorithm>
 #include "MutablePriorityQueue.h"
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 using namespace std;
 
@@ -33,11 +36,14 @@ class Vertex {
 
     vector<Edge* > adj;  // outgoing edges
 
+    vector<Edge* > allAdj; // outgoing + ingoing edges
+
     bool visited;  // for path finding
     Vertex *path; // for path finding
     long double dist;   // for path finding
     int queueIndex = 0; // required by MutablePriorityQueue
-
+    int dfsNum = 0;
+    bool isCarPark = false;
 
     Vertex(unsigned long id, long double x, long double y);
     void addEdge(Edge *e);
@@ -52,6 +58,7 @@ public:
     long double getY() const;
     friend class Graph;
     friend class MutablePriorityQueue<Vertex>;
+    bool CarPark();
 };
 
 /* ================================================================================================
@@ -74,6 +81,7 @@ public:
     unsigned long getId() const;
     Vertex * getOrig() const;
     Vertex * getDest() const;
+    static bool compareEdge(Edge * e1, Edge * e2);
 };
 
 /* ================================================================================================
@@ -88,6 +96,7 @@ class Graph {
     long double maxX = NEG_INF_DOUBLE;
     long double minY = INF_DOUBLE;
     long double maxY = NEG_INF_DOUBLE;
+    unsigned int numCarPark = 0;
 
 public:
     Vertex* findVertex(unsigned long id) const;
@@ -100,17 +109,18 @@ public:
     long double getMaxX() const;
     long double getMinY() const;
     long double getMaxY() const;
+    unsigned int getNumCarPark() const;
 
     /// Dijkstra
     Vertex *initSingleSource(const unsigned long &origin);
     bool relax(Vertex *v, Vertex *w, long double weight);
     void dijkstraShortestPath(const unsigned long &origin);
     vector<unsigned long> getPath(const unsigned long &origin, const unsigned long &dest) const;
-    void unweightedShortestPath(const int &orig);
-    void bellmanFordShortestPath(const int &orig);
-    vector<int> dfs() const;
-    void dfsVisit(Vertex *v, vector<int> & vec) const;
-    bool isConnected();
+    vector<vector<Vertex *>> dfs(bool post_order) const;
+    void dfsVisit(Vertex *v, vector<Vertex *> & vec) const;
+    void dfsVisitPostOrder(Vertex *v, vector<Vertex *> & vec) const;
+    vector<vector<Vertex *>> stronglyConnectedComponents();
+    unsigned long findClosestParkBFS(Vertex * dest, vector<unsigned long> exclude);
 };
 
 

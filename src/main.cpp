@@ -8,20 +8,33 @@
 #endif
 
 static Graph graph;
-GraphViewer * gv = new GraphViewer();
+GraphViewer *gv = new GraphViewer();
+bool showIDs = false;
 
+/**
+ * Loads graph of 4x4 grid
+ */
 void load4x4GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");
 }
 
-void load8x8GridGraph() {
+/**
+ * Loads graph of 8x8 grid
+ */
+ void load8x8GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
 }
 
+/**
+ * Loads graph of 16x16 grid
+ */
 void load16x16GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/16x16/nodes.txt", "../resources/Mapas/GridGraphs/16x16/edges.txt");
 }
 
+/**
+ * Loads grid's graph menu
+ */
 void loadGridGraphsMenu() {
     drawMenu("Looking for parking spots - Load Map - Grid Graphs", {
             {"4x4",   load4x4GridGraph},
@@ -30,59 +43,92 @@ void loadGridGraphsMenu() {
     });
 }
 
+/**
+ * Loads graph of Aveiro from Portugal
+ */
 void loadPortugalAveiroGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_aveiro.txt",
                      "../resources/Mapas/PortugalMaps/Aveiro/edges_aveiro.txt");
 }
 
+/**
+ * Loads graph of Braga from Portugal
+ */
 void loadPortugalBragaGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_braga.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_braga.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Braga/nodes_x_y_braga.txt",
+                     "../resources/Mapas/PortugalMaps/Braga/edges_braga.txt");
 }
 
+/**
+ * Loads graph of Coimbra from Portugal
+ */
 void loadPortugalCoimbraGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_coimbra.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_coimbra.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Coimbra/nodes_x_y_coimbra.txt",
+                     "../resources/Mapas/PortugalMaps/Coimbra/edges_coimbra.txt");
 }
 
+/**
+ * Loads graph of Ermesinde from Portugal
+ */
 void loadPortugalErmesindeGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_ermesinde.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_ermesinde.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Ermesinde/nodes_x_y_ermesinde.txt",
+                     "../resources/Mapas/PortugalMaps/Ermesinde/edges_ermesinde.txt");
 }
 
+/**
+ * Loads graph of Fafe from Portugal
+ */
 void loadPortugalFafeGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_fafe.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_fafe.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Fafe/nodes_x_y_fafe.txt",
+                     "../resources/Mapas/PortugalMaps/Fafe/edges_fafe.txt");
 }
 
+/**
+ * Loads graph of Gondomar from Portugal
+ */
 void loadPortugalGondomarGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_gondomar.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_gondomar.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Gondomar/nodes_x_y_gondomar.txt",
+                     "../resources/Mapas/PortugalMaps/Gondomar/edges_gondomar.txt");
 }
 
+/**
+ * Loads graph of Lisboa from Portugal
+ */
 void loadPortugalLisboaGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_lisboa.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_lisboa.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Lisboa/nodes_x_y_lisboa.txt",
+                     "../resources/Mapas/PortugalMaps/Lisboa/edges_lisboa.txt");
 }
 
+/**
+ * Loads graph of Maia from Portugal
+ */
 void loadPortugalMaiaGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_maia.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_maia.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Maia/nodes_x_y_maia.txt",
+                     "../resources/Mapas/PortugalMaps/Maia/edges_maia.txt");
 }
 
+/**
+ * Loads graph of Porto from Portugal
+ */
 void loadPortugalPortoGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_porto.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_porto.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Porto/nodes_x_y_porto.txt",
+                     "../resources/Mapas/PortugalMaps/Porto/edges_porto.txt");
 }
 
+/**
+ * Loads graph of Portugal
+ */
 void loadPortugalPortugalGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_portugal.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_portugal.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Portugal/nodes_x_y_portugal.txt",
+                     "../resources/Mapas/PortugalMaps/Portugal/edges_portugal.txt");
 }
 
+/**
+ * Loads graph of Viseu from Portugal
+ */
 void loadPortugalViseuGraph() {
-    graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_viseu.txt",
-                     "../resources/Mapas/PortugalMaps/Aveiro/edges_viseu.txt");
+    graph = parseMap("../resources/Mapas/PortugalMaps/Viseu/nodes_x_y_viseu.txt",
+                     "../resources/Mapas/PortugalMaps/Viseu/edges_viseu.txt");
 }
 
 
@@ -169,8 +215,8 @@ void loadMapMenu() {
     });
 }
 
-vector<unsigned long> getShortestPath() {
-    int origin, destination;
+vector<unsigned long> getShortestPath(int & destination) {
+    int origin;
     vector<unsigned long> path;
 
     cout << "Please enter origin" << endl;
@@ -178,21 +224,31 @@ vector<unsigned long> getShortestPath() {
     cout << "Please enter destination" << endl;
     cin >> destination;
     graph.dijkstraShortestPath(origin);
-    path = graph.getPath(origin, destination);
-    while (path.empty()){
-        cout << "Origin and destination are not connected!" << endl << endl;
-        cout << "Please enter origin" << endl;
-        cin >> origin;
-        cout << "Please enter destination" << endl;
-        cin >> destination;
-        graph.dijkstraShortestPath(origin);
-        path = graph.getPath(origin, destination);
+
+    vector<unsigned long> exclude;
+
+    // BFS to get nearest car park
+    unsigned long carPark = graph.findClosestParkBFS(graph.findVertex(destination), exclude);
+
+    path = graph.getPath(origin, carPark);
+    while (path.empty()) {
+        cout << endl << "Origin and car park [" << carPark << "] are not connected!" << endl << "Trying next car park." << endl;
+
+        exclude.push_back(carPark);
+        carPark = graph.findClosestParkBFS(graph.findVertex(destination), exclude);
+        path = graph.getPath(origin, carPark);
+
+        if(exclude.size() == graph.getNumCarPark()){
+            cout << "Could not find any path between origin [" << origin << "] and destination [" << destination << "]." << endl;
+            return getShortestPath(destination);
+        }
     }
     return path;
 }
 
 void dijkstra() {
-    vector<unsigned long> path = getShortestPath();
+    int destination;
+    vector<unsigned long> path = getShortestPath(destination);
 
     unsigned long previous_id = INF;
 
@@ -202,22 +258,28 @@ void dijkstra() {
     gv->lock();
 
     // clear graphviewer colors
-    for(GraphViewer::Node * node : gv->getNodes()){
-        node->setSize(5);
+    for (GraphViewer::Node *node : gv->getNodes()){
+        if (graph.findVertex(node->getId())->CarPark()) {
+            node->setSize(15);
+        } else {
+            node->setSize(5);
+        }
         node->setColor(sf::Color::Black);
     }
-    for(GraphViewer::Edge *edge : gv->getEdges()) {
+    for (GraphViewer::Edge *edge : gv->getEdges()) {
         edge->setThickness(1);
         edge->setColor(sf::Color::Black);
     }
 
+    cout << "Path: ";
+
     // change color of result
-    for (const unsigned long &id : path){
-        cout << "Node: " << id << endl;
+    for (const unsigned long &id : path) {
+        cout << id << " -> ";
         GraphViewer::Node &node = gv->getNode(id);
         node.setColor(sf::Color::Red);
         node.setSize(10);
-        if(previous_id != INF) {
+        if (previous_id != INF) {
             Edge *e = graph.getEdgeFromTo(previous_id, id);
             GraphViewer::Edge &edge = gv->getEdge(e->getId());
             edge.setColor(sf::Color::Red);
@@ -228,11 +290,13 @@ void dijkstra() {
 
     // make start and finnish nodes more noticeable
     GraphViewer::Node &start_node = gv->getNode(path[0]);
-    GraphViewer::Node &final_node = gv->getNode(path[path.size()-1]);
+    GraphViewer::Node &final_node = gv->getNode(destination);
+    GraphViewer::Node &parking_node = gv->getNode(path[path.size() - 1]);
     start_node.setColor(sf::Color::Blue);
     start_node.setSize(25);
     final_node.setColor(sf::Color::Green);
     final_node.setSize(25);
+    parking_node.setSize(25);
 
     gv->unlock();
     gv->setEnabledNodes(true);
@@ -241,17 +305,98 @@ void dijkstra() {
 
 }
 
-void connectivity(){
-    if (graph.isConnected())
-        cout << "true" << endl;
-    else
-        cout << "false" << endl;
+void connectivity() {
+    vector<vector<Vertex *>> components = graph.stronglyConnectedComponents();
+
+    gv->setEnabledNodes(false);
+    gv->setEnabledEdgesText(false);
+    gv->setZipEdges(false);
+    gv->lock();
+
+    // clear graphviewer colors
+    for (GraphViewer::Node *node : gv->getNodes()) {
+        if (graph.findVertex(node->getId())->CarPark()) {
+            node->setSize(15);
+        } else {
+            node->setSize(5);
+        }
+        node->setColor(sf::Color::Black);
+    }
+    for (GraphViewer::Edge *edge : gv->getEdges()) {
+        edge->setThickness(2);
+        edge->setColor(sf::Color(200,200,200));
+    }
+
+    sf::Color color = sf::Color(rand() % 255, rand() % 255, rand() % 255);
+    // change color of result
+    for (vector<Vertex *> vertexes : components) {
+        cout << endl << "Component: ";
+
+        unsigned long previous_id = INF;
+        for (Vertex *vertex : vertexes) {
+            cout << vertex->getId() << " ; ";
+            GraphViewer::Node &node = gv->getNode(vertex->getId());
+            node.setColor(color);
+            if (previous_id != INF) {
+                Edge *e = graph.getEdgeFromTo(previous_id, vertex->getId());
+                if(e) {
+                    cout << e->getId() << endl;
+                    GraphViewer::Edge &edge = gv->getEdge(e->getId());
+                    edge.setColor(color);
+                }
+                else cout << "ERRO!";
+            }
+            previous_id = vertex->getId();
+        }
+        sf::Color prev_color = color;
+        while (prev_color == color) {
+            color = sf::Color(rand() % 255, rand() % 255, rand() % 255);
+        }
+    }
+
+    cout << endl << endl << "Number of different strongly connected components: " << components.size() << endl;
+
+    gv->unlock();
+    gv->setEnabledNodes(true);
+    gv->setEnabledEdgesText(true);
+    gv->setZipEdges(true);
+}
+
+void toggleIDs(){
+    gv->setEnabledNodes(false);
+    gv->setEnabledEdgesText(false);
+    gv->setZipEdges(false);
+    gv->lock();
+
+    showIDs = !showIDs;
+
+    for (GraphViewer::Node *node : gv->getNodes()){
+        if (graph.findVertex(node->getId())->CarPark()) {
+            node->setSize(15);
+        } else {
+            node->setSize(5);
+        }
+
+        if(showIDs){
+            node->setLabel(to_string(node->getId()));
+            node->setLabelColor(sf::Color::Red);
+        }
+        else{
+            node->setLabel("");
+        }
+    }
+
+    gv->unlock();
+    gv->setEnabledNodes(true);
+    gv->setEnabledEdgesText(true);
+    gv->setZipEdges(true);
 }
 
 void algorithmSelMenu() {
     drawMenu("Select the algorithm you wish to apply", {
-            {"Dijkstra",     dijkstra},
-            {"Connectivity", connectivity},
+            {"Find Parking Spot (Dijkstra + BFS)", dijkstra},
+            {"Test Graph Connectivity", connectivity},
+            {"Toggle Nodes IDs", toggleIDs}
     });
 }
 
@@ -276,15 +421,22 @@ void startApp() {
     gv->setCenter(sf::Vector2f((minY + maxY) / 2, (minX + maxX) / 2));
 
     for (Vertex *v : vertexes) {
-        GraphViewer::Node& node = gv->addNode(v->getId(), sf::Vector2f(v->getY(), minX + maxX - v->getX()));
+        GraphViewer::Node &node = gv->addNode(v->getId(), sf::Vector2f(v->getY(), minX + maxX - v->getX()));
         node.setSize(5);
+        if (v->CarPark()) {
+            node.setIcon("../resources/parkSymbol.png");
+            node.setSize(15);
+        } else {
+            node.setSize(5);
+        }
         node.setColor(sf::Color::Black);
     }
 
 
     for (Edge *e : edges) {
-        GraphViewer::Edge& edge = gv->addEdge(e->getId(), gv->getNode(e->getOrig()->getId()), gv->getNode(e->getDest()->getId()),
-                   GraphViewer::Edge::DIRECTED);
+        GraphViewer::Edge &edge = gv->addEdge(e->getId(), gv->getNode(e->getOrig()->getId()),
+                                              gv->getNode(e->getDest()->getId()),
+                                              GraphViewer::Edge::DIRECTED);
         edge.setThickness(1);
         edge.setColor(sf::Color::Black);
     }
@@ -307,10 +459,11 @@ int main() {
 #ifndef WIN32
     XInitThreads();
 #endif
+    srand(time(nullptr));
 
     drawMenu("Looking for parking spots - Load Map", {
-            {"Load Map",              loadMapMenu},
-            {"Look for parking spot", startApp}
+            {"Load Map", loadMapMenu},
+            {"Start App", startApp}
     });
 
     return 0;

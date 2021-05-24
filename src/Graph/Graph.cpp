@@ -45,6 +45,12 @@ long double Vertex::getY() const {
     return this->y;
 }
 
+
+bool Vertex::CarPark(){
+    return this->isCarPark;
+}
+
+
 /* ================================================================================================
  * Class Edge
  * ================================================================================================
@@ -82,12 +88,18 @@ Vertex * Graph::addVertex(unsigned long id, long double x, long double y) {
     if (v != nullptr)
         return v;
     v = new Vertex(id, x, y);
+    int random = rand() % 20;
+    if(random == 0){
+        v->isCarPark = true;
+        numCarPark++;
+    }
     vertexSet.push_back(v);
 
-    if(x<minX) minX = x;
-    if(x>maxX) maxX = x;
-    if(y<minY) minY = y;
-    if(y>maxY) maxY = y;
+    if (x < minX) minX = x;
+    if (x > maxX) maxX = x;
+    if (y < minY) minY = y;
+    if (y > maxY) maxY = y;
+
 
     return v;
 }
@@ -99,6 +111,8 @@ Edge * Graph::addEdge(unsigned long id, unsigned long sourc, unsigned long dest)
         return nullptr;
     Edge *e = new Edge(id, s, d);
     s->addEdge(e);
+    s->allAdj.push_back(e);
+    d->allAdj.push_back(e);
     edgeSet.push_back(e);
     return e;
 }
@@ -115,9 +129,11 @@ vector<Vertex *> Graph::getVertexSet() const {
 }
 
 Edge * Graph::getEdgeFromTo(const unsigned long & from, const unsigned long & to) const {
-    for (auto e : edgeSet)
+    for (auto e : edgeSet) {
         if (e->orig->id == from && e->dest->id == to)
             return e;
+    }
+    return nullptr;
 }
 
 vector<Edge *> Graph::getEdgeSet() const {
@@ -138,6 +154,10 @@ long double Graph::getMinY() const {
 
 long double Graph::getMaxY() const {
     return maxY;
+}
+
+unsigned int Graph::getNumCarPark() const {
+    return numCarPark;
 }
 
 /**
@@ -205,45 +225,92 @@ vector<unsigned long> Graph::getPath(const unsigned long &origin, const unsigned
 }
 
 
-vector<int> Graph::dfs() const {
+vector<vector<Vertex *>> Graph::dfs(bool post_order) const {
 
-    vector<int> vec;
+    vector<vector<Vertex *>> res;
 
     for (auto v : vertexSet)
         v -> visited = false;
 
-    for (auto v : vertexSet)
-        if ( !v -> visited)
-            dfsVisit(v, vec);
+    for (auto v : vertexSet) {
+        if (!v->visited) {
+            vector<Vertex *> vec;
+            if(post_order){
+                dfsVisitPostOrder(v, vec);
+            }
+            else{
+                dfsVisit(v, vec);
+            }
+            res.push_back(vec);
+        }
+    }
 
-    return vec;
+    return res;
 }
 
-void Graph::dfsVisit(Vertex *v, vector<int> & vec) const {
+void Graph::dfsVisit(Vertex *v, vector<Vertex *> & vec) const {
     v -> visited = true;
 
-    vec.push_back(v -> id);
     for (auto & e : v -> adj){
-
         auto w = e -> dest;
-        if ( !w -> visited)
+        if ( !w -> visited) {
             dfsVisit(w, vec);
+        }
+    }
+    vec.push_back(v);
+}
+
+void Graph::dfsVisitPostOrder(Vertex *v, vector<Vertex *> & vec) const {
+    v -> visited = true;
+
+    vec.push_back(v);
+    for (auto & e : v -> adj){
+        auto w = e -> dest;
+        if ( !w -> visited) {
+            dfsVisit(w, vec);
+        }
     }
 }
 
-bool Graph::isConnected(){
+vector<vector<Vertex *>> Graph::stronglyConnectedComponents() {
 
-    vector<int> vec1 = dfs();
+    vector<vector<Vertex *>> g = dfs(false);
 
     Graph gr;
 
-    for (auto v : vertexSet)
-        gr.vertexSet.push_back(v);
+    for (vector<Vertex *> vertexes : g){
+        for(Vertex * v : vertexes){
+            gr.addVertex(v->id, v->x, v->y);
+        }
+    }
     for (auto e : edgeSet)
         gr.addEdge(e->getId(), e->getDest()->getId(), e->getOrig()->getId());
 
     reverse(gr.vertexSet.begin(), gr.vertexSet.end());
-    vector<int> vec2 = gr.dfs();
 
-    return !(vec1.size() != vertexSet.size() || vec2.size() != gr.vertexSet.size());
+    return gr.dfs(true);
 }
+
+unsigned long Graph::findClosestParkBFS(Vertex * dest, vector<unsigned long> exclude){
+    for(auto v : vertexSet) {
+        v->visited = false;
+    }
+    queue<Vertex *> q;
+    q.push(dest);
+    dest->visited = true;
+    while (!q.empty()) {
+        Vertex * v = q.front();
+        q.pop();
+        if (v->isCarPark && !(find(exclude.begin(), exclude.end(), v->id ) != exclude.end())){
+            return v->id;
+        }
+        for (Edge *e : v->allAdj) {
+            Vertex *nextVertex = (e->orig->id == v->id) ? e->dest : e->orig;
+            if (!nextVertex->visited) {
+                q.push(nextVertex);
+                nextVertex->visited = true;
+            }
+        }
+    }
+}
+
