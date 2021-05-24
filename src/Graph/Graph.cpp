@@ -2,7 +2,6 @@
 // Created by ricar on 19/05/2021.
 //
 
-#include <algorithm>
 #include "Graph.h"
 
 
@@ -234,18 +233,17 @@ void Graph::dfsVisit(Vertex *v, vector<int> & vec) const {
 
 bool Graph::isConnected(){
 
-    Graph aux;
-    for (auto v : vertexSet)
-        aux.vertexSet.push_back(v);
-    for (auto e : edgeSet)
-        aux.edgeSet.push_back(e);
-
     vector<int> vec1 = dfs();
-    vector<int> vec2 = aux.dfs();
 
-    for ( int i = 0; i < vertexSet.size(); i++)
-        if (!aux.vertexSet[i] -> visited || !vertexSet[i] -> visited)
-            return false;
+    Graph gr;
 
-    return true;
+    for (auto v : vertexSet)
+        gr.vertexSet.push_back(v);
+    for (auto e : edgeSet)
+        gr.addEdge(e->getId(), e->getDest()->getId(), e->getOrig()->getId());
+
+    reverse(gr.vertexSet.begin(), gr.vertexSet.end());
+    vector<int> vec2 = gr.dfs();
+
+    return !(vec1.size() != vertexSet.size() || vec2.size() != gr.vertexSet.size());
 }

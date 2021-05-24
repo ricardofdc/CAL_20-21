@@ -6,6 +6,7 @@
 #include <limits>
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 #include "MutablePriorityQueue.h"
 
 using namespace std;

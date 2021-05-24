@@ -241,10 +241,17 @@ void dijkstra() {
 
 }
 
+void connectivity(){
+    if (graph.isConnected())
+        cout << "true" << endl;
+    else
+        cout << "false" << endl;
+}
+
 void algorithmSelMenu() {
     drawMenu("Select the algorithm you wish to apply", {
             {"Dijkstra",     dijkstra},
-            {"Connectivity", dijkstra},
+            {"Connectivity", connectivity},
     });
 }
 
