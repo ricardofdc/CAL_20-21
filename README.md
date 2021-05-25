@@ -15,7 +15,7 @@
 
 ### nodes.txt file example
 * number of nodes
-* (id, x, y)
+* (id, x position, y position)
 ```
 6
 (1,1,2)
