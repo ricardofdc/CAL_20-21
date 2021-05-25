@@ -2,6 +2,10 @@
 // Created by ricar on 12/05/2021.
 //
 
+#ifndef PROJETO_LOAD_H
+#define PROJETO_LOAD_H
+
+
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -13,10 +17,6 @@
 
 using namespace std;
 
-
-#ifndef PROJETO_LOAD_H
-#define PROJETO_LOAD_H
+Graph parseMap(string nodesPath, string edgesPath);
 
 #endif //PROJETO_LOAD_H
-
-Graph parseMap(string nodesPath, string edgesPath);

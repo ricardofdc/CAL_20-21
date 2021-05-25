@@ -4,7 +4,13 @@
 
 #include "load.h"
 
-
+/**
+ * Loads map from file to new graph.
+ *
+ * @param string nodesPath
+ * @param string edgesPath
+ * @return Graph
+ */
 Graph parseMap(string nodesPath, string edgesPath) {
     cout << endl << "Start map loading..." << endl;
 

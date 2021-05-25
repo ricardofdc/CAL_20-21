@@ -13,6 +13,8 @@ bool showIDs = false;
 
 /**
  * Loads graph of 4x4 grid
+ *
+ * @return void
  */
 void load4x4GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/4x4/nodes.txt", "../resources/Mapas/GridGraphs/4x4/edges.txt");
@@ -20,6 +22,8 @@ void load4x4GridGraph() {
 
 /**
  * Loads graph of 8x8 grid
+ *
+ * @return void
  */
  void load8x8GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
@@ -27,13 +31,17 @@ void load4x4GridGraph() {
 
 /**
  * Loads graph of 16x16 grid
+ *
+ * @return void
  */
 void load16x16GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/16x16/nodes.txt", "../resources/Mapas/GridGraphs/16x16/edges.txt");
 }
 
 /**
- * Loads grid's graph menu
+ * Shows grid's graph menu
+ *
+ * @return void
  */
 void loadGridGraphsMenu() {
     drawMenu("Looking for parking spots - Load Map - Grid Graphs", {
@@ -45,6 +53,8 @@ void loadGridGraphsMenu() {
 
 /**
  * Loads graph of Aveiro from Portugal
+ *
+ * @return void
  */
 void loadPortugalAveiroGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Aveiro/nodes_x_y_aveiro.txt",
@@ -53,6 +63,8 @@ void loadPortugalAveiroGraph() {
 
 /**
  * Loads graph of Braga from Portugal
+ *
+ * @return void
  */
 void loadPortugalBragaGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Braga/nodes_x_y_braga.txt",
@@ -61,6 +73,8 @@ void loadPortugalBragaGraph() {
 
 /**
  * Loads graph of Coimbra from Portugal
+ *
+ * @return void
  */
 void loadPortugalCoimbraGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Coimbra/nodes_x_y_coimbra.txt",
@@ -69,6 +83,8 @@ void loadPortugalCoimbraGraph() {
 
 /**
  * Loads graph of Ermesinde from Portugal
+ *
+ * @return void
  */
 void loadPortugalErmesindeGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Ermesinde/nodes_x_y_ermesinde.txt",
@@ -77,6 +93,8 @@ void loadPortugalErmesindeGraph() {
 
 /**
  * Loads graph of Fafe from Portugal
+ *
+ * @return void
  */
 void loadPortugalFafeGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Fafe/nodes_x_y_fafe.txt",
@@ -85,6 +103,8 @@ void loadPortugalFafeGraph() {
 
 /**
  * Loads graph of Gondomar from Portugal
+ *
+ * @return void
  */
 void loadPortugalGondomarGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Gondomar/nodes_x_y_gondomar.txt",
@@ -93,6 +113,8 @@ void loadPortugalGondomarGraph() {
 
 /**
  * Loads graph of Lisboa from Portugal
+ *
+ * @return void
  */
 void loadPortugalLisboaGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Lisboa/nodes_x_y_lisboa.txt",
@@ -101,6 +123,8 @@ void loadPortugalLisboaGraph() {
 
 /**
  * Loads graph of Maia from Portugal
+ *
+ * @return void
  */
 void loadPortugalMaiaGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Maia/nodes_x_y_maia.txt",
@@ -109,6 +133,8 @@ void loadPortugalMaiaGraph() {
 
 /**
  * Loads graph of Porto from Portugal
+ *
+ * @return void
  */
 void loadPortugalPortoGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Porto/nodes_x_y_porto.txt",
@@ -117,6 +143,8 @@ void loadPortugalPortoGraph() {
 
 /**
  * Loads graph of Portugal
+ *
+ * @return void
  */
 void loadPortugalPortugalGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Portugal/nodes_x_y_portugal.txt",
@@ -125,6 +153,8 @@ void loadPortugalPortugalGraph() {
 
 /**
  * Loads graph of Viseu from Portugal
+ *
+ * @return void
  */
 void loadPortugalViseuGraph() {
     graph = parseMap("../resources/Mapas/PortugalMaps/Viseu/nodes_x_y_viseu.txt",
@@ -132,6 +162,11 @@ void loadPortugalViseuGraph() {
 }
 
 
+/**
+ * Shows menu of Portugal cities graphs
+ *
+ * @return void
+ */
 void loadPortugalMapsMenu() {
     drawMenu("Looking for parking spots - Load Map - Portugal Maps", {
             {"Aveiro",    loadPortugalAveiroGraph},
@@ -148,16 +183,30 @@ void loadPortugalMapsMenu() {
     });
 }
 
+/**
+ * Loads full graph of Espinho from Portugal
+ *
+ * @return void
+*/
 void loadEspinhoFullGraph() {
     graph = parseMap("../resources/Mapas_Espinho/espinho_full_nodes_xy.txt",
                      "../resources/Mapas_Espinho/espinho_full_edges.txt");
 }
 
+/**
+ * Loads strong graph of Espinho from Portugal
+ * @return void
+ */
 void loadEspinhoStrongGraph() {
     graph = parseMap("../resources/Mapas_Espinho/espinho_strong_nodes_xy.txt",
                      "../resources/Mapas_Espinho/espinho_strong_edges.txt");
 }
 
+/**
+ * Shows graph's menu for Espinho from Portugal
+ *
+ * @return void
+ */
 void loadEspinhoMenu() {
     drawMenu("Looking for parking spots - Load Map - Espinho", {
             {"Full map",   loadEspinhoFullGraph},
@@ -165,16 +214,31 @@ void loadEspinhoMenu() {
     });
 }
 
+/**
+ * Loads full graph of Penafiel from Portugal
+ *
+ * @return void
+ */
 void loadPenafielFullGraph() {
     graph = parseMap("../resources/Mapas_Penafiel/penafiel_full_nodes_xy.txt",
                      "../resources/Mapas_Penafiel/penafiel_full_edges.txt");
 }
 
+/**
+ * Loads strong graph of Penafiel from Portugal
+ *
+ * @return void
+ */
 void loadPenafielStrongGraph() {
     graph = parseMap("../resources/Mapas_Penafiel/penafiel_strong_nodes_xy.txt",
                      "../resources/Mapas_Penafiel/penafiel_strong_edges.txt");
 }
 
+/**
+ * Shows graph's menu for Penafiel from Portugal
+ *
+ * @return void
+ */
 void loadPenafielMenu() {
     drawMenu("Looking for parking spots - Load Map - Penafiel", {
             {"Full map",   loadPenafielFullGraph},
@@ -182,16 +246,31 @@ void loadPenafielMenu() {
     });
 }
 
+/**
+ * Loads full graph of Porto from Portugal
+ *
+ * @return void
+ */
 void loadPortoFullGraph() {
     graph = parseMap("../resources/Mapas_Porto/porto_full_nodes_xy.txt",
                      "../resources/Mapas_Porto/porto_full_edges.txt");
 }
 
+/**
+ * Loads strong graph of Porto from Portugal
+ *
+ * @return void
+ */
 void loadPortoStrongGraph() {
     graph = parseMap("../resources/Mapas_Porto/porto_strong_nodes_xy.txt",
                      "../resources/Mapas_Porto/porto_strong_edges.txt");
 }
 
+/**
+ * Shows graph's menu for Porto from Portugal
+ *
+ * @return void
+ */
 void loadPortoMenu() {
     drawMenu("Looking for parking spots - Load Map - Porto", {
             {"Full map",   loadPortoFullGraph},
@@ -199,11 +278,21 @@ void loadPortoMenu() {
     });
 }
 
+/**
+ * Loads our custom map
+ *
+ *  * @return void
+ */
 void loadCustomMap() {
     graph = parseMap("../resources/Custom_Map/nodes.txt",
                      "../resources/Custom_Map/edges.txt");
 }
 
+/**
+ * Shows all graph's menu
+ *
+ * @return void
+ */
 void loadMapMenu() {
     drawMenu("Looking for parking spots - Load Map", {
             {"Grid Graphs",   loadGridGraphsMenu},
@@ -215,6 +304,14 @@ void loadMapMenu() {
     });
 }
 
+/**
+ * Asks the user for the origin and destination nodes.
+ * Then finds one of the nearest car parks to the destination using bfs algorithm.
+ * Finally finds the best path between origin and the car park using Dijkstra.
+ *
+ * @param int & destination
+ * @return vector<unsigned long>
+ */
 vector<unsigned long> getShortestPath(int & destination) {
     int origin;
     vector<unsigned long> path;
@@ -223,6 +320,17 @@ vector<unsigned long> getShortestPath(int & destination) {
     cin >> origin;
     cout << "Please enter destination" << endl;
     cin >> destination;
+
+    if(graph.findVertex(origin) == nullptr){
+        cout << "Invalid origin ID" << endl << endl;
+        return path;
+    }
+
+    if(graph.findVertex(destination) == nullptr){
+        cout << "Invalid destination ID" << endl << endl;
+        return path;
+    }
+
     graph.dijkstraShortestPath(origin);
 
     vector<unsigned long> exclude;
@@ -240,15 +348,23 @@ vector<unsigned long> getShortestPath(int & destination) {
 
         if(exclude.size() == graph.getNumCarPark()){
             cout << "Could not find any path between origin [" << origin << "] and destination [" << destination << "]." << endl;
-            return getShortestPath(destination);
+            return path;
         }
     }
     return path;
 }
 
+/**
+ * Calls getShortestPath and displays this information using graphviewer.
+ *
+ * @return void
+ */
 void dijkstra() {
     int destination;
     vector<unsigned long> path = getShortestPath(destination);
+    if(path.empty()){
+        return;
+    }
 
     unsigned long previous_id = INF;
 
@@ -298,6 +414,8 @@ void dijkstra() {
     final_node.setSize(25);
     parking_node.setSize(25);
 
+
+
     gv->unlock();
     gv->setEnabledNodes(true);
     gv->setEnabledEdgesText(true);
@@ -305,6 +423,11 @@ void dijkstra() {
 
 }
 
+/**
+ * Calculates the connectivity of the current loaded map and shows this information using graphviewer.
+ *
+ * @return void
+ */
 void connectivity() {
     vector<vector<Vertex *>> components = graph.stronglyConnectedComponents();
 
@@ -333,18 +456,23 @@ void connectivity() {
         cout << endl << "Component: ";
 
         unsigned long previous_id = INF;
+        int i=0;
         for (Vertex *vertex : vertexes) {
-            cout << vertex->getId() << " ; ";
+            i++;
+            if(i<25) {
+                cout << vertex->getId() << " ; ";
+            }
+            else if(i==25){
+                cout << vertex->getId() << " ... ";
+            }
             GraphViewer::Node &node = gv->getNode(vertex->getId());
             node.setColor(color);
             if (previous_id != INF) {
-                Edge *e = graph.getEdgeFromTo(previous_id, vertex->getId());
+                Edge *e = graph.getEdgeFromTo(vertex->getId(), previous_id);
                 if(e) {
-                    cout << e->getId() << endl;
                     GraphViewer::Edge &edge = gv->getEdge(e->getId());
                     edge.setColor(color);
                 }
-                else cout << "ERRO!";
             }
             previous_id = vertex->getId();
         }
@@ -362,6 +490,12 @@ void connectivity() {
     gv->setZipEdges(true);
 }
 
+
+/**
+ * Toggles the ids of graphviewer's nodes.
+ *
+ * @return void
+ */
 void toggleIDs(){
     gv->setEnabledNodes(false);
     gv->setEnabledEdgesText(false);
@@ -392,6 +526,11 @@ void toggleIDs(){
     gv->setZipEdges(true);
 }
 
+/**
+ * Shows the algorithm's menu
+ *
+ * @return void
+ */
 void algorithmSelMenu() {
     drawMenu("Select the algorithm you wish to apply", {
             {"Find Parking Spot (Dijkstra + BFS)", dijkstra},
@@ -400,6 +539,11 @@ void algorithmSelMenu() {
     });
 }
 
+/**
+ * Shows current loaded map using graphviewer
+ *
+ * @return void
+ */
 void startApp() {
 
     // export info from Graph to Graphviewer
@@ -455,6 +599,11 @@ void startApp() {
     gv = new GraphViewer();
 }
 
+/**
+ * Shows main menu.
+ *
+ * @return int
+ */
 int main() {
 #ifndef WIN32
     XInitThreads();

@@ -4,6 +4,13 @@
 
 #include "menu.h"
 
+/**
+ * Draws menu items and calls getUnsignedIntInputInclusive() for input.
+ *
+ * @param const string& menuTitle
+ * @param vector<pair<string, menuFunctionPtr> > menuItems
+ * @return void
+ */
 void drawMenu(const string& menuTitle, vector<pair<string, menuFunctionPtr> > menuItems){
 
     string errorMsg = "Invalid Input. Insert a value beetween 0 and " + to_string(menuItems.size()) + "\n";
@@ -29,6 +36,14 @@ void drawMenu(const string& menuTitle, vector<pair<string, menuFunctionPtr> > me
     }
 }
 
+/**
+ * Loops until input between lower and upper bound is received.
+ *
+  * @param unsigned int lowerBound
+  * @param unsigned int higherBound
+  * @param string errorMsg
+  * @return unsigned int
+ */
 unsigned int getUnsignedIntInputInclusive(unsigned int lowerBound, unsigned int higherBound, string errorMsg){
     int result;
     cin >> result;

@@ -113,7 +113,7 @@ public:
 
     /// Dijkstra
     Vertex *initSingleSource(const unsigned long &origin);
-    bool relax(Vertex *v, Vertex *w, long double weight);
+    bool relax(Vertex *v, Vertex *w, long double distance);
     void dijkstraShortestPath(const unsigned long &origin);
     vector<unsigned long> getPath(const unsigned long &origin, const unsigned long &dest) const;
     vector<vector<Vertex *>> dfs(bool post_order) const;
