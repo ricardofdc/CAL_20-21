@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neg_5finf_5fdouble_85',['NEG_INF_DOUBLE',['../_graph_8h.html#a80007abf6e1d86bbcf1080fc233ab886',1,'Graph.h']]]
+  ['neg_5finf_5fdouble_86',['NEG_INF_DOUBLE',['../_graph_8h.html#a80007abf6e1d86bbcf1080fc233ab886',1,'Graph.h']]]
 ];
