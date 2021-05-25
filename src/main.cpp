@@ -25,7 +25,7 @@ void load4x4GridGraph() {
  *
  * @return void
  */
- void load8x8GridGraph() {
+void load8x8GridGraph() {
     graph = parseMap("../resources/Mapas/GridGraphs/8x8/nodes.txt", "../resources/Mapas/GridGraphs/8x8/edges.txt");
 }
 
@@ -312,7 +312,7 @@ void loadMapMenu() {
  * @param int & destination
  * @return vector<unsigned long>
  */
-vector<unsigned long> getShortestPath(int & destination) {
+vector<unsigned long> getShortestPath(int &destination) {
     int origin;
     vector<unsigned long> path;
 
@@ -321,12 +321,12 @@ vector<unsigned long> getShortestPath(int & destination) {
     cout << "Please enter destination" << endl;
     cin >> destination;
 
-    if(graph.findVertex(origin) == nullptr){
+    if (graph.findVertex(origin) == nullptr) {
         cout << "Invalid origin ID" << endl << endl;
         return path;
     }
 
-    if(graph.findVertex(destination) == nullptr){
+    if (graph.findVertex(destination) == nullptr) {
         cout << "Invalid destination ID" << endl << endl;
         return path;
     }
@@ -340,14 +340,16 @@ vector<unsigned long> getShortestPath(int & destination) {
 
     path = graph.getPath(origin, carPark);
     while (path.empty()) {
-        cout << endl << "Origin and car park [" << carPark << "] are not connected!" << endl << "Trying next car park." << endl;
+        cout << endl << "Origin and car park [" << carPark << "] are not connected!" << endl << "Trying next car park."
+             << endl;
 
         exclude.push_back(carPark);
         carPark = graph.findClosestParkBFS(graph.findVertex(destination), exclude);
         path = graph.getPath(origin, carPark);
 
-        if(exclude.size() == graph.getNumCarPark()){
-            cout << "Could not find any path between origin [" << origin << "] and destination [" << destination << "]." << endl;
+        if (exclude.size() == graph.getNumCarPark()) {
+            cout << "Could not find any path between origin [" << origin << "] and destination [" << destination << "]."
+                 << endl;
             return path;
         }
     }
@@ -362,7 +364,7 @@ vector<unsigned long> getShortestPath(int & destination) {
 void dijkstra() {
     int destination;
     vector<unsigned long> path = getShortestPath(destination);
-    if(path.empty()){
+    if (path.empty()) {
         return;
     }
 
@@ -374,7 +376,7 @@ void dijkstra() {
     gv->lock();
 
     // clear graphviewer colors
-    for (GraphViewer::Node *node : gv->getNodes()){
+    for (GraphViewer::Node *node : gv->getNodes()) {
         if (graph.findVertex(node->getId())->CarPark()) {
             node->setSize(15);
         } else {
@@ -415,7 +417,6 @@ void dijkstra() {
     parking_node.setSize(25);
 
 
-
     gv->unlock();
     gv->setEnabledNodes(true);
     gv->setEnabledEdgesText(true);
@@ -447,7 +448,7 @@ void connectivity() {
     }
     for (GraphViewer::Edge *edge : gv->getEdges()) {
         edge->setThickness(2);
-        edge->setColor(sf::Color(200,200,200));
+        edge->setColor(sf::Color(200, 200, 200));
     }
 
     sf::Color color = sf::Color(rand() % 255, rand() % 255, rand() % 255);
@@ -456,20 +457,19 @@ void connectivity() {
         cout << endl << "Component: ";
 
         unsigned long previous_id = INF;
-        int i=0;
+        int i = 0;
         for (Vertex *vertex : vertexes) {
             i++;
-            if(i<25) {
+            if (i < 25) {
                 cout << vertex->getId() << " ; ";
-            }
-            else if(i==25){
+            } else if (i == 25) {
                 cout << vertex->getId() << " ... ";
             }
             GraphViewer::Node &node = gv->getNode(vertex->getId());
             node.setColor(color);
             if (previous_id != INF) {
                 Edge *e = graph.getEdgeFromTo(vertex->getId(), previous_id);
-                if(e) {
+                if (e) {
                     GraphViewer::Edge &edge = gv->getEdge(e->getId());
                     edge.setColor(color);
                 }
@@ -496,7 +496,7 @@ void connectivity() {
  *
  * @return void
  */
-void toggleIDs(){
+void toggleIDs() {
     gv->setEnabledNodes(false);
     gv->setEnabledEdgesText(false);
     gv->setZipEdges(false);
@@ -504,18 +504,17 @@ void toggleIDs(){
 
     showIDs = !showIDs;
 
-    for (GraphViewer::Node *node : gv->getNodes()){
+    for (GraphViewer::Node *node : gv->getNodes()) {
         if (graph.findVertex(node->getId())->CarPark()) {
             node->setSize(15);
         } else {
             node->setSize(5);
         }
 
-        if(showIDs){
+        if (showIDs) {
             node->setLabel(to_string(node->getId()));
             node->setLabelColor(sf::Color::Red);
-        }
-        else{
+        } else {
             node->setLabel("");
         }
     }
@@ -534,8 +533,8 @@ void toggleIDs(){
 void algorithmSelMenu() {
     drawMenu("Select the algorithm you wish to apply", {
             {"Find Parking Spot (Dijkstra + BFS)", dijkstra},
-            {"Test Graph Connectivity", connectivity},
-            {"Toggle Nodes IDs", toggleIDs}
+            {"Test Graph Connectivity",            connectivity},
+            {"Toggle Nodes IDs",                   toggleIDs}
     });
 }
 
@@ -611,7 +610,7 @@ int main() {
     srand(time(nullptr));
 
     drawMenu("Looking for parking spots - Load Map", {
-            {"Load Map", loadMapMenu},
+            {"Load Map",  loadMapMenu},
             {"Start App", startApp}
     });
 

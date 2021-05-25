@@ -61,7 +61,7 @@ Graph parseMap(string nodesPath, string edgesPath) {
     unsigned long id_final;
 
     //parse edges
-    for(int i=0; i<n; i++){
+    for (int i = 0; i < n; i++) {
 
         getline(edgesFile, currLine);
 

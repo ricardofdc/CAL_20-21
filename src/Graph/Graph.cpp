@@ -446,10 +446,9 @@ void Graph::dfsVisit(Vertex *v, vector<Vertex *> &vec) const {
 void Graph::dfsVisitPostOrder(Vertex *v, vector<Vertex *> &vec) const {
     v->visited = true;
 
-    if(v->adj.size() == 0){
+    if (v->adj.size() == 0) {
         vec.push_back(v);
-    }
-    else {
+    } else {
         for (Edge *e : v->adj) {
             vec.push_back(v);
             Vertex *w = e->dest;
@@ -476,13 +475,13 @@ vector<vector<Vertex *>> Graph::stronglyConnectedComponents() {
         }
     }
 
-    for (Edge* e : edgeSet)
+    for (Edge *e : edgeSet)
         gr.addEdge(e->getId(), e->getDest()->getId(), e->getOrig()->getId());
 
     reverse(gr.vertexSet.begin(), gr.vertexSet.end());
 
-    for (Vertex* v : gr.vertexSet){
-        sort(v->adj.begin(), v->adj.end(), [gr](Edge* lhs, Edge* rhs) {
+    for (Vertex *v : gr.vertexSet) {
+        sort(v->adj.begin(), v->adj.end(), [gr](Edge *lhs, Edge *rhs) {
             int index1 = std::distance(gr.vertexSet.begin(), find(gr.vertexSet.begin(), gr.vertexSet.end(), lhs->dest));
             int index2 = std::distance(gr.vertexSet.begin(), find(gr.vertexSet.begin(), gr.vertexSet.end(), rhs->dest));
             return index1 < index2;

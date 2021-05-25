@@ -1,7 +1,3 @@
-//
-// Created by ricar on 12/05/2021.
-//
-
 #include "menu.h"
 
 /**
@@ -11,7 +7,7 @@
  * @param vector<pair<string, menuFunctionPtr> > menuItems
  * @return void
  */
-void drawMenu(const string& menuTitle, vector<pair<string, menuFunctionPtr> > menuItems){
+void drawMenu(const string &menuTitle, vector<pair<string, menuFunctionPtr> > menuItems) {
 
     string errorMsg = "Invalid Input. Insert a value beetween 0 and " + to_string(menuItems.size()) + "\n";
 
@@ -44,10 +40,10 @@ void drawMenu(const string& menuTitle, vector<pair<string, menuFunctionPtr> > me
   * @param string errorMsg
   * @return unsigned int
  */
-unsigned int getUnsignedIntInputInclusive(unsigned int lowerBound, unsigned int higherBound, string errorMsg){
+unsigned int getUnsignedIntInputInclusive(unsigned int lowerBound, unsigned int higherBound, string errorMsg) {
     int result;
     cin >> result;
-    while(!cin.good() || result < lowerBound || result > higherBound){
+    while (!cin.good() || result < lowerBound || result > higherBound) {
         cin.clear();
         cin.ignore(1000, '\n');
         cout << endl << errorMsg << endl;
