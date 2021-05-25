@@ -1,7 +1,10 @@
 # CAL_20-21
 
+## Documentation
+* We generated a html doxygen documentation available at ./html/index.html
+
 ## Running and Compilation
-* build and run using CLion
+* Build and run using CLion
 
 ## App usage
 * Choose map to load
